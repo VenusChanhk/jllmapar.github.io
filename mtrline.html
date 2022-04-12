@@ -3,13 +3,13 @@
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
     <!-- we import arjs version without NFT but with marker + location based support -->
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-    <body style="margin : 0px 0px 0px; overflow: hidden;">
+    <body style="margin : 0px; overflow: hidden;">
       <div class="arcam" style="position: absolute; right: 0; bottom: 0;left: 0; top:100px;">
         <a-scene  embedded arjs inspector="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js">
         <a-marker-camera type="pattern" preset="custom" url="https://venuschanhk.github.io/jllmapar.github.io/pattern-jll.patt">
             <!-- we use cors proxy to avoid cross-origin problems ATTENTION! you need to set up your server -->
             <a-entity
-            position="3.22 0.0001 3.22"
+            position="3.22 3.22 1.22"
             scale="0.0000911743 0.0000911743 0.0000911743"
             gltf-model="https://venuschanhk.github.io/jllmapar.github.io/MTR_GLTF/HK_MTR_all_boundary_2_0.glb"
             ></a-entity>
@@ -17,7 +17,7 @@
         <a-entity camera></a-entity>
         </a-scene>
       </div>
-      <div class="topnavigation" style="position: absolute; right: 0; bottom: 0;left: 0; top:0; height:100px;">
+      <div class="topnavigation" style="background-color: #EBEBEB; position: absolute; right: 0; bottom: 0;left: 0; top:0; height:120px; width: 200px">
         <ul>
           <li class="topnav"><a href="mtrline.html">MTR Line</a></li>
           <li class="topnav"><a href="poi.html">Point of Interest</a></li>
@@ -27,4 +27,3 @@
       </div>
     </body>
 </html>
-
