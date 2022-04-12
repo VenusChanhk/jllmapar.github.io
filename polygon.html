@@ -8,43 +8,13 @@
     
     <!-- AR.js by @jerome_etienne - github: https://github.com/jeromeetienne/ar.js - info: https://medium.com/arjs/augmented-reality-in-10-lines-of-html-4e193ea9fdbf -->
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
-    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.5/aframe/build/aframe-ar.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <!-- import the webpage's javascript file -->
-    <script>
-         AFRAME.registerComponent("listener", {
-            init: function() {
-	      	this.target = document.querySelector('#target');
-		this.marker = document.querySelector('#marker');
-		this.marker.setAttribute('visible', 'true')
-	      	this.prevPosition = null;
-	      	this.prevRotation = null;
-            },
-           tick: function() {
-             if (this.el.object3D.visible) {
-               this.target.setAttribute('visible', 'true')
-               if(this.prevPosition) {
-                 this.target.object3D.position.lerp(this.prevPosition, 0.1)
-                 let rot = this.target.object3D.rotation.toVector3().lerp(this.prevRotation, 0.1)
-                 this.target.object3D.rotation.setFromVector3(rot)
-               } else {
-                 this.target.setAttribute('position', this.el.getAttribute('position'))
-                 this.target.setAttribute('rotation', this.el.getAttribute('rotation'))
-               }
-               this.prevPosition = this.el.object3D.position
-               this.prevRotation = this.el.object3D.rotation
 
-              } else {
-               this.target.setAttribute('visible', 'true')
-                this.prevPosition = null;
-                this.prevRotation = null;
-              }
-           }
-         })  
-    </script>
   </head>  
   <body>
 	<a-scene embedded arjs renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: true; sortObjects: true">
-    		<a-marker-camera id='marker' type="pattern" preset="hiro" listener>
+    		<a-marker-camera id='marker' type="pattern" preset="custom" url="https://venuschanhk.github.io/jllmapar.github.io/pattern-jll.patt" listener>
           		<a-entity
 				id='target'
 				position="3.22 1 0.22"
