@@ -1,0 +1,46 @@
+Export time: 2022/04/12 15:34:42 CST
+Export duration: 22.971s
+
+Export settings:
+	Export Geometry: Models with Shape Fallback
+	Output Path: C:\Users\venus\Desktop\JLL AR\3DModel
+	Simplify Terrain Meshes: true
+	Terrain Layers: Do not export any terrain layers
+	applicationString: CityEngine 2019.0.5403 0409R
+	author: venus
+	baseName: GBA_dev
+	encoderID: com.esri.prt.codecs.GLTFEncoder
+	encoderName: Khronos Group glTF
+	errorFallback: true
+	existingFiles: OVERWRITE
+	fileGranularity: MEMORY_BUDGET
+	globalOffset: [ -1.270095369140625E7, -0.0, 2571289.55078125 ]
+	includeMaterials: true
+	memoryBudget: 500
+	meshGranularity: INSTANCED
+	outputFormat: GLTF_GLB_WITH_SINGLE_BUFFER
+	sceneFile: /ESRI.lib/scenes/new_scene1.cej
+	script: 
+	shapeNameDelimiter: _
+	writeLog: true
+
+Initial shapes:
+	0 :   OK                'Shape'             OID 'ede5b208-9238-11b4-860c-0045209d902b'
+
+
+
+Files created:
+	'GBA_dev_0.glb':
+		Initial shapes:
+			0, 
+		GEOMETRY:
+			Total Meshes: 1
+			Total Polygons: 94
+			  | Name                    | Instance Occurrences | Material               | Polygons 
+			==+=========================+======================+========================+==========
+			1  'mesh_CityEngineMaterial'                     1  'CityEngineMaterial(1),'        94 
+		MATERIAL:
+			Total Materials: 1
+			  | Name               | baseColorTexture | emissiveTexture | metallicRoughnessTexture | normalTexture | occlusionTexture 
+			==+====================+==================+=================+==========================+===============+==================
+			1  'CityEngineMaterial' ''                 ''                ''                         ''              ''                
