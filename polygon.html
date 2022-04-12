@@ -13,9 +13,11 @@
     <script>
          AFRAME.registerComponent("listener", {
             init: function() {
-              this.target = document.querySelector('#target');
-              this.prevPosition = null;
-              this.prevRotation = null;
+	      	this.target = document.querySelector('#target');
+		this.marker = document.querySelector('#marker');
+		this.marker.setAttribute('visible', 'true')
+	      	this.prevPosition = null;
+	      	this.prevRotation = null;
             },
            tick: function() {
              if (this.el.object3D.visible) {
@@ -32,7 +34,7 @@
                this.prevRotation = this.el.object3D.rotation
 
               } else {
-               this.target.setAttribute('visible', 'false')
+               this.target.setAttribute('visible', 'true')
                 this.prevPosition = null;
                 this.prevRotation = null;
               }
