@@ -27,8 +27,8 @@
              if (this.el.object3D.visible) {
 //                this.target.setAttribute('visible', 'true')
                if(this.prevPosition) {
-                 this.el.object3D.position.lerp(this.prevPosition, 0.5)
-                 let rot = this.el.object3D.rotation.toVector3().lerp(this.prevRotation, 0.5)
+                 this.el.object3D.position.lerp(this.prevPosition, 2)
+                 let rot = this.el.object3D.rotation.toVector3().lerp(this.prevRotation, 2)
                  this.el.object3D.rotation.setFromVector3(rot)
                } else {
                  this.el.setAttribute('position', this.el.getAttribute('position'))
@@ -47,7 +47,7 @@
     </script>
   <body>
 	<a-scene embedded arjs renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: true; sortObjects: true">
-    		<a-marker-camera id='marker' type="pattern" preset="custom" url="https://venuschanhk.github.io/jllmapar.github.io/pattern-jll.patt" listener>
+    		<a-marker-camera listener id='marker' type="pattern" preset="custom" url="https://venuschanhk.github.io/jllmapar.github.io/pattern-jll.patt" smooth="true" smoothCount=10>
 <!--           		<a-entity
 
 				position="3.22 1 0.22"
