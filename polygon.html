@@ -41,19 +41,15 @@
     </script>
   </head>  
   <body>
-    <h1>Hi there!</h1>
-	<a-scene embedded arjs='sourceType: webcam;'>
-    <a-marker id='marker' type="pattern" preset="custom" url="https://venuschanhk.github.io/jllmapar.github.io/pattern-jll.patt" listener>
-          <a-box position='2 0.5 0' material='opacity: 0.5;'></a-box>
-    </a-marker>
-    		
-    <a-entity
-                position="3.22 1 0.22"
-                scale="0.0000911743 0.0000911743 0.0000911743"
-                gltf-model="https://venuschanhk.github.io/jllmapar.github.io/Polygon/GBA_dev_0.glb"
-                ></a-entity>
-
-		<a-camera-static/>
+	<a-scene embedded arjs renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: true; sortObjects: true">
+    		<a-marker id='marker' type="pattern" preset="custom" url="https://venuschanhk.github.io/jllmapar.github.io/pattern-jll.patt" listener>
+          		<a-entity
+				position="3.22 1 0.22"
+				scale="0.0000911743 0.0000911743 0.0000911743"
+				gltf-model="https://venuschanhk.github.io/jllmapar.github.io/Polygon/GBA_dev_0.glb"
+			></a-entity>
+    		</a-marker>
+		<a-entity camera></a-entity>
 	</a-scene>
 
   </body>
