@@ -6,7 +6,7 @@
     <body style="margin : 0px; overflow: hidden;">
 <!--       <div class="arcam" style="position: absolute; right: 0; bottom: 0;left: 0; top:100px;"> -->
         <a-scene  embedded arjs inspector="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js">
-        <a-marker-camera size=0.017 type="pattern" preset="custom" url="https://venuschanhk.github.io/jllmapar.github.io/pattern-jll.patt" smooth="true" smoothCount=100 smoothTolerance=0.0001 smoothThreshold=500>
+        <a-marker-camera size=0.017 type="pattern" preset="custom" url="https://venuschanhk.github.io/jllmapar.github.io/pattern-jll.patt" smooth="true" >
             <!-- we use cors proxy to avoid cross-origin problems ATTENTION! you need to set up your server -->
 <!--             <a-box position='0 0.5 0' color="yellow"></a-box> -->
 <!--             <a-entity
@@ -14,13 +14,14 @@
             scale="0.0000911743 0.0000911743 0.0000911743"
             gltf-model="https://venuschanhk.github.io/jllmapar.github.io/Polygon/GBA_dev_0.glb"
             ></a-entity> -->
+            
             <a-entity
             position="3.22 1 0.22"
-            scale="1 1 1"
+            scale="0.1 0.1 0.1"
             gltf-model="https://venuschanhk.github.io/jllmapar.github.io/Polygon/Test model_0.glb"
             ></a-entity>
-        </a-marker-camera>
-        <a-entity camera></a-entity>
+            </a-marker-camera>
+            <a-entity camera></a-entity>
         </a-scene>
 <!--       </div> -->
 <!--       <div class="topnavigation" style="background-color: #EBEBEB; position: absolute; right: 0; bottom: 0;left: 0; top:0; height:120px; width: 200px">
