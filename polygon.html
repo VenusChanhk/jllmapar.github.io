@@ -47,13 +47,20 @@
     </script>
   <body>
 	<a-scene embedded arjs renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: true; sortObjects: true">
-    		<a-marker-camera id='marker' type="pattern" preset="custom" url="https://venuschanhk.github.io/jllmapar.github.io/pattern-jll.patt" listener>
-          		<a-entity
+    		<a-marker-camera id='marker' type="pattern" preset="hiro" listener>
+<!--           		<a-entity
 
 				position="3.22 1 0.22"
 				scale="0.0000911743 0.0000911743 0.0000911743"
 				gltf-model="https://venuschanhk.github.io/jllmapar.github.io/Polygon/GBA_dev_0.glb"
-			></a-entity>
+			></a-entity> -->
+			
+			<!--                 For testing -->
+                <a-entity
+                position="3.22 1 0.22"
+                scale="0.1 0.1 0.1"
+                gltf-model="https://venuschanhk.github.io/jllmapar.github.io/Polygon/Test model_0.glb"
+                ></a-entity>
     		</a-marker-camera>
 <!-- 		<a-box id='target' material='opacity: 0.5;'></a-box> -->
 		<a-entity camera></a-entity>
