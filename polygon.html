@@ -17,7 +17,7 @@
 	    <script>
          AFRAME.registerComponent("listener", {
             init: function() {
-	      	this.target = document.querySelector('#target');
+	      	this.target = document.querySelector('a-entity');
 		this.marker = document.querySelector('#marker');
 		this.marker.setAttribute('visible', 'true')
 	      	this.prevPosition = null;
