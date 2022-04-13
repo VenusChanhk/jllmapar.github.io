@@ -27,8 +27,8 @@
 	     if (this.el.object3D.visible) {
 	       this.target.setAttribute('visible', 'true')
 	       if(this.prevPosition) {
-		 this.target.object3D.position.lerp(this.prevPosition, 0.1)
-		 let rot = this.target.object3D.rotation.toVector3().lerp(this.prevRotation, 0.1)
+		 this.target.object3D.position.lerp(this.prevPosition, 1)
+		 let rot = this.target.object3D.rotation.toVector3().lerp(this.prevRotation, 1)
 		 this.target.object3D.rotation.setFromVector3(rot)
 	       } else {
 		 this.target.setAttribute('position', this.el.getAttribute('position'))
@@ -47,8 +47,8 @@
          })  
     </script>
   <body>
-	<a-scene embedded arjs renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: true; sortObjects: true">
-    		<a-marker listener id='marker' type="pattern" preset="hiro" >
+	<a-scene embedded arjs renderer="antialias: true;  colorManagement: true; sortObjects: true">
+    		<a-marker listener id='marker' type="pattern" preset="custom" url="https://venuschanhk.github.io/jllmapar.github.io/pattern-jll.patt" >
 <!--           		<a-entity
 
 				position="3.22 1 0.22"
@@ -78,7 +78,7 @@
 			></a-entity> -->
 		<a-box id='target' position="3.22 1 0.22" material='opacity: 0.5;'></a-box>
 
-		<a-camera-static/>
+		<a-entity camera></a-entity>
 	</a-scene>
 
   </body>
