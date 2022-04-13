@@ -47,27 +47,22 @@
          })  
     </script>
   <body>
-	<a-scene embedded arjs renderer="antialias: true;  colorManagement: true; sortObjects: true">
-    		<a-marker listener id='marker' type="pattern" preset="custom" url="https://venuschanhk.github.io/jllmapar.github.io/pattern-jll.patt" >
-<!--           		<a-entity
+	<a-scene embedded arjs >
+    		<a-marker listener id='marker' type="pattern" preset="custom" url="https://venuschanhk.github.io/jllmapar.github.io/pattern-jll.patt" smooth='true'>
+			<a-box material='opacity: 0.5;'></a-box>
 
+			<a-entity
+				id=target
 				position="3.22 1 0.22"
 				scale="0.0000911743 0.0000911743 0.0000911743"
 				gltf-model="https://venuschanhk.github.io/jllmapar.github.io/Polygon/GBA_dev_0.glb"
-			></a-entity> -->
+			></a-entity>
 			
-						<a-box material='opacity: 0.5;'></a-box>
-					<a-box id='target' position="3.22 1 0.22" material='opacity: 1;'></a-box>
 
 			<!--                 For testing -->
-<!-- 			<a-entity
-			id=target
-			position="3.22 1 0.22"
-			scale="0.1 0.1 0.1"
-			gltf-model="https://venuschanhk.github.io/jllmapar.github.io/Polygon/Test model_0.glb"
-			></a-entity> -->
-<!-- 			<a-box material='opacity: 0.5;'></a-box> -->
-			
+
+<!-- 								<a-box id='target' position="3.22 1 0.22" material='opacity: 1;'></a-box> -->
+
 
 
     		</a-marker>
