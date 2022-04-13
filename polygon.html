@@ -26,7 +26,7 @@
            tick: function() {
              if (this.marker.object3D.visible) {
                this.target.setAttribute('visible', 'true')
-               if(this.prevPosition) {
+               if(this.target.prevPosition) {
                  this.target.object3D.position.lerp(this.target.prevPosition, 400)
                  let rot = this.target.object3D.rotation.toVector3().lerp(this.target.prevRotation, 400)
                  this.target.object3D.rotation.setFromVector3(rot)
@@ -34,8 +34,8 @@
                  this.target.setAttribute('position', this.target.getAttribute('position'))
                  this.target.setAttribute('rotation', this.target.getAttribute('rotation'))
                }
-               this.prevPosition = this.target.object3D.position
-               this.prevRotation = this.target.object3D.rotation
+               this.target.prevPosition = this.target.object3D.position
+               this.target.prevRotation = this.target.object3D.rotation
 
               } else {
                this.target.setAttribute('visible', 'false')
@@ -55,7 +55,7 @@
 				gltf-model="https://venuschanhk.github.io/jllmapar.github.io/Polygon/GBA_dev_0.glb"
 			></a-entity> -->
 			
-						<a-box id=marker material='opacity: 0.5;'></a-box>
+						<a-box id=marker material='opacity: 0.5;' position="0 0 0"></a-box>
 			
 			<!--                 For testing -->
 <!-- 			<a-entity
