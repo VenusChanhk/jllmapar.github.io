@@ -48,7 +48,7 @@
     </script>
   <body>
 	<a-scene embedded arjs renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: true; sortObjects: true">
-    		<a-marker-camera listener id='marker' type="pattern" preset="hiro" >
+    		<a-marker listener id='marker' type="pattern" preset="hiro" >
 <!--           		<a-entity
 
 				position="3.22 1 0.22"
@@ -69,7 +69,7 @@
 			
 
 
-    		</a-marker-camera>
+    		</a-marker>
 <!-- 			<a-entity
 				id='target'	
 				position="3.22 1 0.22"
@@ -78,7 +78,7 @@
 			></a-entity> -->
 		<a-box id='target' position="3.22 1 0.22" material='opacity: 0.5;'></a-box>
 
-		<a-entity camera></a-entity>
+		<a-camera-static/>
 	</a-scene>
 
   </body>
