@@ -19,12 +19,12 @@
             init: function() {
 	      	this.target = document.querySelector('#target');
 		this.marker = document.querySelector('#marker');
-		this.marker.setAttribute('visible', 'true')
+// 		this.marker.setAttribute('visible', 'true')
 	      	this.prevPosition = null;
 	      	this.prevRotation = null;
             },
            tick: function() {
-             if (this.el.object3D.visible) {
+             if (this.marker.object3D.visible) {
                this.target.setAttribute('visible', 'true')
                if(this.prevPosition) {
                  this.target.object3D.position.lerp(this.prevPosition, 400)
@@ -55,7 +55,7 @@
 				gltf-model="https://venuschanhk.github.io/jllmapar.github.io/Polygon/GBA_dev_0.glb"
 			></a-entity> -->
 			
-						<a-box material='opacity: 0.5;'></a-box>
+						<a-box id=marker material='opacity: 0.5;'></a-box>
 			
 			<!--                 For testing -->
 <!-- 			<a-entity
