@@ -31,8 +31,8 @@
 		 let rot = this.target.object3D.rotation.toVector3().lerp(this.prevRotation, 400)
 		 this.target.object3D.rotation.setFromVector3(rot)
 	       } else {
-		 this.target.setAttribute('position', this.el.getAttribute('position'))
-		 this.target.setAttribute('rotation', this.el.getAttribute('rotation'))
+		 this.target.setAttribute('position', this.marker.getAttribute('position'))
+		 this.target.setAttribute('rotation', this.marker.getAttribute('rotation'))
 	       }
 	       this.prevPosition = this.marker.object3D.position
 	       this.prevRotation = this.marker.object3D.rotation
@@ -56,7 +56,7 @@
 				gltf-model="https://venuschanhk.github.io/jllmapar.github.io/Polygon/GBA_dev_0.glb"
 			></a-entity> -->
 			
-						<a-box id=marker material='opacity: 0.5;' position="0 0 0"></a-box>
+						<a-box id=marker material='opacity: 0.5;'></a-box>
 			
 			<!--                 For testing -->
 <!-- 			<a-entity
