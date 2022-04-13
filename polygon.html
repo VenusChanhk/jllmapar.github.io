@@ -26,16 +26,16 @@
 	   tick: function() {
 	     if (this.marker.object3D.visible) {
 	       this.target.setAttribute('visible', 'true')
-	       if(this.prevPosition) {
+	       if(this.target.prevPosition) {
 		 this.target.object3D.position.lerp(this.prevPosition, 400)
 		 let rot = this.target.object3D.rotation.toVector3().lerp(this.prevRotation, 400)
 		 this.target.object3D.rotation.setFromVector3(rot)
 	       } else {
-		 this.target.setAttribute('position', this.marker.getAttribute('position'))
-		 this.target.setAttribute('rotation', this.marker.getAttribute('rotation'))
+		 this.target.setAttribute('position', this.getAttribute('position'))
+		 this.target.setAttribute('rotation', this.getAttribute('rotation'))
 	       }
-	       this.prevPosition = this.marker.object3D.position
-	       this.prevRotation = this.marker.object3D.rotation
+	       this.prevPosition = this.object3D.position
+	       this.prevRotation = this.object3D.rotation
 
 	      } else {
 	       this.target.setAttribute('visible', 'false')
