@@ -18,17 +18,17 @@
          AFRAME.registerComponent("listener", {
             init: function() {
 	      	this.target = document.querySelector('#target');
-		this.marker = document.querySelector('#marker');
+// 		this.marker = document.querySelector('#marker');
 // 		this.marker.setAttribute('visible', 'true')
 	      	this.prevPosition = null;
 	      	this.prevRotation = null;
             },
 	   tick: function() {
-	     if (this.marker.object3D.visible) {
+	     if (this.el.object3D.visible) {
 	       this.target.setAttribute('visible', 'true')
 	       if(this.prevPosition) {
-		 this.target.object3D.position.lerp(this.prevPosition, 1000)
-		 let rot = this.target.object3D.rotation.toVector3().lerp(this.prevRotation, 1000)
+		 this.target.object3D.position.lerp(this.prevPosition, 0.1)
+		 let rot = this.target.object3D.rotation.toVector3().lerp(this.prevRotation, 0.1)
 		 this.target.object3D.rotation.setFromVector3(rot)
 	       } else {
 		 this.target.setAttribute('position', this.el.getAttribute('position'))
@@ -70,13 +70,13 @@
 
 
     		</a-marker-camera>
-			<a-entity
+<!-- 			<a-entity
 				id='target'	
 				position="3.22 1 0.22"
 				scale="0.0000911743 0.0000911743 0.0000911743"
 				gltf-model="https://venuschanhk.github.io/jllmapar.github.io/Polygon/GBA_dev_0.glb"
-			></a-entity>
-<!-- 		<a-box id=marker material='opacity: 0.5;'></a-box> -->
+			></a-entity> -->
+		<a-box id='target' material='opacity: 0.5;'></a-box>
 
 		<a-entity camera></a-entity>
 	</a-scene>
