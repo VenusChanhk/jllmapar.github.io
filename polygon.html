@@ -27,12 +27,12 @@
              if (this.marker.object3D.visible) {
                this.target.setAttribute('visible', 'true')
                if(this.prevPosition) {
-                 this.target.object3D.position.lerp(this.prevPosition, 400)
-                 let rot = this.target.object3D.rotation.toVector3().lerp(this.prevRotation, 400)
+                 this.target.object3D.position.lerp(this.target.prevPosition, 400)
+                 let rot = this.target.object3D.rotation.toVector3().lerp(this.target.prevRotation, 400)
                  this.target.object3D.rotation.setFromVector3(rot)
                } else {
-                 this.target.setAttribute('position', this.el.getAttribute('position'))
-                 this.target.setAttribute('rotation', this.el.getAttribute('rotation'))
+                 this.target.setAttribute('position', this.target.getAttribute('position'))
+                 this.target.setAttribute('rotation', this.target.getAttribute('rotation'))
                }
                this.prevPosition = this.target.object3D.position
                this.prevRotation = this.target.object3D.rotation
