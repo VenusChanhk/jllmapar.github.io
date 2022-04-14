@@ -1,0 +1,54 @@
+Export time: 2022/04/14 20:13:26 CST
+Export duration: 20.008s
+
+Export settings:
+	Export Geometry: Models
+	Output Path: C:\Users\venus\Desktop\JLL AR\3DModel
+	Simplify Terrain Meshes: true
+	Terrain Layers: Do not export any terrain layers
+	applicationString: CityEngine 2019.0.5403 0409R
+	author: venus
+	baseName: developement_area_2
+	encoderID: com.esri.prt.codecs.GLTFEncoder
+	encoderName: Khronos Group glTF
+	errorFallback: false
+	existingFiles: OVERWRITE
+	fileGranularity: MEMORY_BUDGET
+	globalOffset: [ -0.0, -0.0, -0.0 ]
+	includeMaterials: true
+	memoryBudget: 500
+	meshGranularity: AS_GENERATED
+	outputFormat: GLTF_GLB_WITH_SINGLE_BUFFER
+	sceneFile: /ESRI.lib/scenes/developement_area.cej
+	script: 
+	shapeNameDelimiter: _
+	writeLog: true
+
+Initial shapes:
+	0 :   OK                'developement_area_2_0.glb'             OID '250f2aac-4ff1-11b2-a4fb-0045209d902b'
+
+Assets with errors/warnings/infos:
+	/ESRI.lib/models/developement_area_2_0.glb:
+		Warning: Geometry 'file:/C:/Users/venus/Desktop/New%20folder/ESRI.lib/models/developement_area_2_0.glb (mesh: from extrude_3)' contained: 2 0-area faces (removed); ; Geometry 'file:/C:/Users/venus/Desktop/New%20folder/ESRI.lib/models/developement_area_2_0.glb (mesh: from extrude_2)' contained: 2 0-area faces (removed); ; 
+
+
+Files created:
+	'developement_area_2_0.glb':
+		Initial shapes:
+			0, 
+		GEOMETRY:
+			Total Meshes: 6
+			Total Polygons: 3240
+			  | Name           | Material           | Polygons 
+			==+================+====================+==========
+			1  'from extrude_5' 'CityEngineMaterial'       908 
+			2  'from extrude_4' 'CityEngineMaterial'       408 
+			3  'from extrude_3' 'CityEngineMaterial'       378 
+			4  'from extrude_2' 'CityEngineMaterial'       930 
+			5  'from extrude_1' 'CityEngineMaterial'       504 
+			6  'from extrude'   'CityEngineMaterial'       112 
+		MATERIAL:
+			Total Materials: 1
+			  | Name               | baseColorTexture | emissiveTexture | metallicRoughnessTexture | normalTexture | occlusionTexture 
+			==+====================+==================+=================+==========================+===============+==================
+			1  'CityEngineMaterial' ''                 ''                ''                         ''              ''                
