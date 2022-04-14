@@ -1,0 +1,50 @@
+Export time: 2022/04/14 15:28:32 CST
+Export duration: 37.89s
+
+Export settings:
+	Export Geometry: Models with Shape Fallback
+	Output Path: C:\Users\venus\Desktop\JLL AR\3DModel
+	Simplify Terrain Meshes: true
+	Terrain Layers: Do not export any terrain layers
+	applicationString: CityEngine 2019.0.5403 0409R
+	author: venus
+	baseName: developement_area
+	encoderID: com.esri.prt.codecs.GLTFEncoder
+	encoderName: Khronos Group glTF
+	errorFallback: true
+	existingFiles: OVERWRITE
+	fileGranularity: MEMORY_BUDGET
+	globalOffset: [ -0.0, -0.0, -0.0 ]
+	includeMaterials: true
+	memoryBudget: 500
+	meshGranularity: INSTANCED
+	outputFormat: GLTF_GLB_WITH_SINGLE_BUFFER
+	sceneFile: /ESRI.lib/scenes/developement_area.cej
+	script: 
+	shapeNameDelimiter: _
+	writeLog: true
+
+Initial shapes:
+	0 :   OK                'developement_area_0.glb'             OID 'c754f8a4-4007-11b2-afed-0045209d902b'
+
+
+
+Files created:
+	'developement_area_0.glb':
+		Initial shapes:
+			0, 
+		GEOMETRY:
+			Total Meshes: 3
+			Total Polygons: 20376
+			  | Name                      | Instance Occurrences | Material                 | Polygons 
+			==+===========================+======================+==========================+==========
+			1  'mesh_CityEngineMaterial_2'                     1  'CityEngineMaterial_2(1),'      3378 
+			2  'mesh_CityEngineMaterial'                       1  'CityEngineMaterial(1),'        6788 
+			3  'mesh_CityEngineMaterial_1'                     1  'CityEngineMaterial_1(1),'     10210 
+		MATERIAL:
+			Total Materials: 3
+			  | Name                 | baseColorTexture | emissiveTexture | metallicRoughnessTexture | normalTexture | occlusionTexture 
+			==+======================+==================+=================+==========================+===============+==================
+			1  'CityEngineMaterial_2' ''                 ''                ''                         ''              ''                
+			2  'CityEngineMaterial'   ''                 ''                ''                         ''              ''                
+			3  'CityEngineMaterial_1' ''                 ''                ''                         ''              ''                
