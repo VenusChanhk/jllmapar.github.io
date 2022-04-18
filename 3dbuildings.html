@@ -22,6 +22,11 @@
 // 		this.marker.setAttribute('visible', 'true')
 	      	this.prevPosition = null;
 	      	this.prevRotation = null;
+
+          this.target.addEventListener('click',funtion()){
+            this.target.style.display = "Block";
+          }
+
             },
 	   tick: function() {
 	     if (this.el.object3D.visible) {
@@ -44,30 +49,29 @@
 	      }
 	   }
            }
-         })
+         // })
+       )
 
-		    
+
     </script>
   <body>
-	<a-scene embedded arjs inspector="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js">
-    		<a-marker listener id='marker' type="pattern" preset="custom" url="https://venuschanhk.github.io/jllmapar.github.io/pattern-jll.patt" size="0.03" smooth='true'>
-			<a-box material='opacity: 0;'></a-box>
+    <div id='container'>
+	     <a-scene embedded arjs inspector="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js">
+    		   <a-marker listener id='marker' type="pattern" preset="custom" url="https://venuschanhk.github.io/jllmapar.github.io/pattern-jll.patt" size="0.03" smooth='true'>
+			          <a-box material='opacity: 0;'></a-box>
 
-			<a-entity
-				id=target
-				position="3.3504 1 0.0756"
-				scale="0.3 0.3 0.3"
-				gltf-model="https://venuschanhk.github.io/jllmapar.github.io/Polygon/developement_area_2_0.glb"
-			></a-entity>
-
-
-			<!--                 For testing -->
-
-<!-- 								<a-box id='target' position="3.22 1 0.22" material='opacity: 1;'></a-box> -->
+          			<a-entity
+          				id=target
+          				position="3.3504 1 0.0756"
+          				scale="0.3 0.3 0.3"
+          				gltf-model="https://venuschanhk.github.io/jllmapar.github.io/Polygon/developement_area_2_0.glb"
+          			></a-entity>
 
 
+			                <!-- For testing
+								<a-box id='target' position="3.22 1 0.22" material='opacity: 1;'></a-box> -->
 
-    		</a-marker>
+        </a-marker>
 <!-- 			<a-entity
 				id='target'
 				position="3.22 1 2.22"
@@ -75,8 +79,11 @@
 				gltf-model="https://venuschanhk.github.io/jllmapar.github.io/Polygon/GBA_dev_0.glb"
 			></a-entity> -->
 
-		<a-entity camera></a-entity>
-	</a-scene>
-
+		    <a-entity camera></a-entity>
+	   </a-scene>
+     <div id='model_info' style="background-color:rgba(204, 201, 203, 0.4); width:fit-content; height:fit-content; display: none; position:absolute; top:0; left:0">
+       <h3>Northern Metropolis Development Area<br>北部都會區發展</h3>
+     </div>
+    </div>
   </body>
 </html>
