@@ -23,9 +23,9 @@
 	      	this.prevPosition = null;
 	      	this.prevRotation = null;
 
-//           this.target.addEventListener('click',funtion()){
-//             this.target.style.display = "Block";
-//           }
+          this.target.addEventListener('click',funtion()){
+            this.target.style.display = "Block";
+          }
 
             },
 	   tick: function() {
@@ -55,7 +55,7 @@
 
     </script>
   <body>
-    <div id='container'>
+<!--     <div id='container'> -->
 	     <a-scene embedded arjs inspector="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js">
     		   <a-marker listener id='marker' type="pattern" preset="custom" url="https://venuschanhk.github.io/jllmapar.github.io/pattern-jll.patt" size="0.03" smooth='true'>
 			          <a-box material='opacity: 0;'></a-box>
@@ -84,6 +84,6 @@
      <div id='model_info' style="background-color:rgba(204, 201, 203, 0.4); width:fit-content; height:fit-content; display: none; position:absolute; top:0; left:0">
        <h3>Northern Metropolis Development Area<br>北部都會區發展</h3>
      </div>
-    </div>
+<!--     </div> -->
   </body>
 </html>
