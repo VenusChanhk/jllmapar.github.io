@@ -16,15 +16,18 @@
 	<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 	<script>
 		
-// 		AFRAME.registerComponent("OnClickListener", {
-// 			init: function(){
-// 				const themodel = document.querySelector("#animated-model");
+		AFRAME.registerComponent("ClickListener", {
+			init: function(){
+				const target = document.querySelector('#target');
+				const modelinfo = document.querySelector('#model_info');
 				      
-// 				themodel.addEventListener('click',funtion(){
-//             			this.target.style.display = "Block";
-//           			});
-// 			}
-// 		});
+		    		target.addEventListener('click', e=> {
+					alert("Clicked");
+            				modelinfo.style.display = "Block";
+          			});
+			}
+		});
+		
          AFRAME.registerComponent("listener", {
             init: function() {
 	      	this.target = document.querySelector('#target');
@@ -34,9 +37,9 @@
 	      	this.prevPosition = null;
 	      	this.prevRotation = null;
 		
-		    this.target.addEventListener('click',funtion(){
-            			modelinfo.style.display = "Block";
-          			});
+// 		    this.target.addEventListener('click',funtion(){
+//             			modelinfo.style.display = "Block";
+//           			});
             },
 	   tick: function() {
 	     if (this.el.object3D.visible) {
