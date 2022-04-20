@@ -16,30 +16,31 @@
 	<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 	<script>
 
-		AFRAME.registerComponent("clicklistener", {
-			init: function(){
-				this.target = document.querySelector('#target');
-				 const info_northern_metropolis = document.getElementById('info_northern_metropolis');
-
-		    		this.target.addEventListener('click', e=> {
-					         // alert("Clicked");
-                   info_northern_metropolis.style.display = "block";
-          			});
-			}
-		});
+		// AFRAME.registerComponent("clicklistener", {
+		// 	init: function(){
+		// 		this.target = document.querySelector('#target');
+		// 		 const info_northern_metropolis = document.getElementById('info_northern_metropolis');
+    //
+		//     		this.target.addEventListener('click', e=> {
+		// 			         // alert("Clicked");
+    //                info_northern_metropolis.style.display = "block";
+    //       			});
+		// 	}
+		// });
 
     AFRAME.registerComponent("listener", {
       init: function() {
         this.target = document.querySelector('#target');
         // 		this.marker = document.querySelector('#marker');
-        const modelinfo = document.querySelector('#model_info');
+        const info_northern_metropolis = document.getElementById('model_info');
         // 		this.marker.setAttribute('visible', 'true');
         this.prevPosition = null;
         this.prevRotation = null;
 
-        // 		    this.target.addEventListener('click',funtion(){
-        //             			modelinfo.style.display = "Block";
-        //           			});
+        this.target.addEventListener('click', e=> {
+               // alert("Clicked");
+               info_northern_metropolis.style.display = "block";
+            });
       },
       tick: function() {
         if (this.el.object3D.visible) {
@@ -73,7 +74,7 @@
           <a-box material='opacity: 0.2;'></a-box>
 
           <a-entity
-            clicklistener
+            <!-- clicklistener -->
             id=target
             position="6.129606 0 -3.336102"
             scale="0.021 0.05 0.021"
