@@ -36,7 +36,7 @@
         this.dev_area_north = document.querySelector('#dev_area_north');
         this.dev_area_harbour = document.querySelector('#dev_area_harbour');
         // this.close = document.querySelector('#close');
-        // 		this.marker = document.querySelector('#marker');
+        		this.marker = document.querySelector('#marker');
         // var left_inner_container = document.getElementByClass('left_container_inner');
         var info_econ_belt_east = document.getElementById('info_econ_belt_east');
         var info_econ_belt_west = document.getElementById('info_econ_belt_west');
@@ -48,6 +48,7 @@
       },
 
       tick: function() {
+
         // if (this.el.object3D.visible) {
         //   this.target.setAttribute('visible', 'true')
         //   if(this.target.object3D.prevPosition) {
@@ -106,7 +107,7 @@
                      info_harbour_metropolis.style.display = "none";
             });
 
-            document.getElementByClass("left_container_inner").addEventListener('click', function () {
+            document.getElementsByClassName("left_container_inner").addEventListener('click', function () {
                      this.style.margin = "auto";
                      this.style.width = "80%";
             });
@@ -123,8 +124,10 @@
       <a-scene embedded arjs cursor="fuse: false; rayOrigin: mouse;" renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: true; sortObjects: true">
         <a-marker listener id='marker' emitevents="true" rayOrigin="objects: .clickable" type="pattern" preset="custom" url="https://venuschanhk.github.io/jllmapar.github.io/pattern-JLL(1).patt" size="0.042" smooth='true'>
           <a-box material='opacity: 0.2;'></a-box>
-          <a-text value="NORTHERN METROPOLIS" position="3.32312 1.5 -4.438602" width="5" color="black" ></a-text>
-          <a-text value="Eastern\nKnowledge and Technology\nCorridor" position="6.129606 1.3 -3.336102" width="5" color="black" ></a-text>
+          <a-text value="NORTHERN METROPOLIS" position="3.32312 1.5 -4.438602" width="5" color="black" align="center"></a-text>
+          <a-text value="HARBOUR METROPOLIS" position="5.57865 1.5 -1.82784" width="5" color="black" align="center"></a-text>
+          <a-text value="EASTERN\nKNOWLEDGE and TECHNOLOGY\nCORRIDOR" position="6.129606 1.3 -3.336102" width="5" color="black" align="center"></a-text>
+          <a-text value="WESTERN\nECONOMIC\nCorridor" position="2.85321 1.3 -2.878155" width="5" color="black" align="center"></a-text>
           <a-entity
             id='econ_belt_east'
             position="6.129606 0 -3.336102"
@@ -166,7 +169,7 @@
       </a-scene>
     <!-- </div> -->
     <!-- <div class="left_container" style="position:absolute; top:0; left:0;"> -->
-      <div id="nav_bar_logo" style="Padding:3px; width:20% position:absolute; top:0; left:0;">
+      <div id="nav_bar_logo" style="Padding:3px; width:20%; position:absolute; top:0; left:0;">
         <a href="https://www.jll.com.hk" class="logo-link">
           <img src="https://www.jll.com.hk/content/dam/jll-com/images/logos/jll-logo-positive.svg" alt="JLL Hong Kong" class="cq-dd-image logo" loading="lazy" width="100" height="43">
         </a>
