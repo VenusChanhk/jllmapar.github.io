@@ -42,6 +42,7 @@
         var info_econ_belt_west = document.getElementById('info_econ_belt_west');
         var info_northern_metropolis = document.getElementById('info_northern_metropolis');
         var info_harbour_metropolis = document.getElementById('info_harbour_metropolis');
+        var left_container_inner = document.getElementById('left_container_inner');
         // 		this.marker.setAttribute('visible', 'true');
         this.prevPosition = null;
         this.prevRotation = null;
@@ -94,28 +95,28 @@
 
             document.getElementById("close-east").addEventListener('click', function () {
                      info_econ_belt_east.style.display = "none";
-                     document.getElementById("left_container_inner").style.width = "30%";
+                     left_container_inner.style.width = "30%";
             });
             document.getElementById("close-west").addEventListener('click', function () {
                      info_econ_belt_west.style.display = "none";
-                     document.getElementById("left_container_inner").style.width = "30%";
+                    left_container_inner.style.width = "30%";
 
             });
             document.getElementById("close-north").addEventListener('click', function () {
                      info_northern_metropolis.style.display = "none";
-                     document.getElementById("left_container_inner").style.width = "30%";
+                     left_container_inner.style.width = "30%";
 
             });
             document.getElementById("close-harbour").addEventListener('click', function () {
                      info_harbour_metropolis.style.display = "none";
-                     document.getElementById("left_container_inner").style.width = "30%";
+                     left_container_inner.style.width = "30%";
             });
 
             document.getElementById("left_container_inner").addEventListener('click', function () {
-                     if(this.style.width = "30%"){
-                       this.style.width = "90%";
+                     if(left_container_inner.style.width = "30%"){
+                       left_container_inner.style.width = "90%";
                      }else{
-                       this.style.width = "30%";
+                       left_container_inner.style.width = "30%";
                      }
             });
         }
