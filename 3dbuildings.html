@@ -70,24 +70,28 @@
         // }
 
         this.econ_belt_east.addEventListener('click', function () {
+          left_container_inner.style.width = "30%";
                info_econ_belt_east.style.display = "block";
                info_econ_belt_west.style.display = "none";
                info_northern_metropolis.style.display = "none";
                info_harbour_metropolis.style.display = "none";
               });
         this.econ_belt_west.addEventListener('click', function () {
+          left_container_inner.style.width = "30%";
                info_econ_belt_east.style.display = "none";
                info_econ_belt_west.style.display = "block";
                info_northern_metropolis.style.display = "none";
                info_harbour_metropolis.style.display = "none";
             });
         this.dev_area_north.addEventListener('click', function () {
+          left_container_inner.style.width = "30%";
                info_econ_belt_east.style.display = "none";
                info_econ_belt_west.style.display = "none";
                info_northern_metropolis.style.display = "block";
                info_harbour_metropolis.style.display = "none";
             });
         this.dev_area_harbour.addEventListener('click', function () {
+                left_container_inner.style.width = "30%";
                info_econ_belt_east.style.display = "none";
                info_econ_belt_west.style.display = "none";
                info_northern_metropolis.style.display = "none";
@@ -96,21 +100,17 @@
 
             document.getElementById("close-east").addEventListener('click', function () {
                      info_econ_belt_east.style.display = "none";
-                     left_container_inner.style.width = "30%";
             });
             document.getElementById("close-west").addEventListener('click', function () {
                      info_econ_belt_west.style.display = "none";
-                    left_container_inner.style.width = "30%";
 
             });
             document.getElementById("close-north").addEventListener('click', function () {
                      info_northern_metropolis.style.display = "none";
-                     left_container_inner.style.width = "30%";
 
             });
             document.getElementById("close-harbour").addEventListener('click', function () {
                      info_harbour_metropolis.style.display = "none";
-                     left_container_inner.style.width = "30%";
             });
 
             document.getElementById("left_container_inner").addEventListener('click', function () {
@@ -133,10 +133,10 @@
       <a-scene embedded arjs cursor="fuse: false; rayOrigin: mouse;" renderer="antialias: true; logarithmicDepthBuffer: true; colorManagement: true; sortObjects: true">
         <a-marker listener id='marker' emitevents="true" rayOrigin="objects: .clickable" type="pattern" preset="custom" url="https://venuschanhk.github.io/jllmapar.github.io/pattern-JLL(1).patt" size="0.042" smooth='true'>
           <a-box material='opacity: 0.2;'></a-box>
-          <a-text value="NORTHERN METROPOLIS" position="3.32312 1.5 -4.438602" width="5" color="black" align="center"></a-text>
-          <a-text value="HARBOUR METROPOLIS" position="5.57865 1.5 -1.82784" width="5" color="black" align="center"></a-text>
-          <a-text value="EASTERN\nKNOWLEDGE and TECHNOLOGY\nCORRIDOR" position="6.129606 1.3 -3.336102" look-at="[camera]" width="5" color="black" align="center"></a-text>
-          <a-text value="WESTERN\nECONOMIC\nCorridor" position="2.85321 1.3 -2.878155" width="5" color="black" align="center"></a-text>
+          <a-text value="NORTHERN METROPOLIS" position="3.32312 1.5 -4.438602" width="2" color="black" align="center" look-at="[camera]"></a-text>
+          <a-text value="HARBOUR METROPOLIS" position="5.57865 1.5 -1.82784" width="2" color="black" align="center" look-at="[camera]"></a-text>
+          <a-text value="EASTERN\nKNOWLEDGE and TECHNOLOGY\nCORRIDOR" position="6.129606 1.3 -3.336102" look-at="[camera]" width="2" color="black" align="center"></a-text>
+          <a-text value="WESTERN\nECONOMIC\nCorridor" position="2.85321 1.3 -2.878155" width="2" color="black" align="center" look-at="[camera]"></a-text>
           <!-- <a-entity
             position="2.85321 1.3 -2.878155"
             material="color: black"
@@ -190,7 +190,7 @@
           <img src="https://www.jll.com.hk/content/dam/jll-com/images/logos/jll-logo-positive.svg" alt="JLL Hong Kong" class="cq-dd-image logo" loading="lazy" width="100" height="43">
         </a>
       </div>
-      <div class="left_container_inner" id='left_container_inner' style=" position:absolute; background-color:rgba(204, 201, 203, 0.4); width:30%; height:fit-content; font-size: 1vw; top:43px; left:0;">
+      <div class="left_container_inner" id='left_container_inner' style=" position:absolute; background-color:rgba(204, 201, 203, 0.4); width:30%; height:fit-content; font-size: 2vw; top:43px; left:0;">
         <div id='info_northern_metropolis' style="display: none; Padding:3px 3px 3px 3px; ">
           <span id="close-north" style="float:right; display:inline-block; top:-2px; padding-right:5px; cursor: pointer;">&#10005;</span>
           <h3>Northern Metropolis<br>北部都會區</h3>
