@@ -71,13 +71,19 @@
                info_econ_belt_west.style.display = "none";
                info_northern_metropolis.style.display = "none";
                info_harbour_metropolis.style.display = "none";
-            });
+               document.getElementById('close').onclick = function(){
+                 info_econ_belt_east.style.display = "none";
+                };
+              });
         this.econ_belt_west.addEventListener('click', function () {
                // alert("Clicked");
                info_econ_belt_east.style.display = "none";
                info_econ_belt_west.style.display = "block";
                info_northern_metropolis.style.display = "none";
                info_harbour_metropolis.style.display = "none";
+               document.getElementById('close').onclick = function(){
+                 info_econ_belt_west.style.display = "none";
+                };
             });
         this.dev_area_north.addEventListener('click', function () {
                // alert("Clicked");
@@ -85,6 +91,9 @@
                info_econ_belt_west.style.display = "none";
                info_northern_metropolis.style.display = "block";
                info_harbour_metropolis.style.display = "none";
+               document.getElementById('close').onclick = function(){
+                 info_northern_metropolis.style.display = "none";
+                };
             });
         this.dev_area_harbour.addEventListener('click', function () {
                // alert("Clicked");
@@ -92,6 +101,9 @@
                info_econ_belt_west.style.display = "none";
                info_northern_metropolis.style.display = "none";
                info_harbour_metropolis.style.display = "block";
+               document.getElementById('close').onclick = function(){
+                 info_harbour_metropolis.style.display = "none";
+                };
             });
 
         }
@@ -149,13 +161,14 @@
       </a-scene>
     <!-- </div> -->
     <div class="left_container" style="position:absolute; top:0; left:0;">
-      <div id="nav_bar_logo" style="Padding:3px; height:10px; width:20%">
+      <div id="nav_bar_logo" style="Padding:3px; width:20%">
         <a href="https://www.jll.com.hk" class="logo-link">
           <img src="https://www.jll.com.hk/content/dam/jll-com/images/logos/jll-logo-positive.svg" alt="JLL Hong Kong" class="cq-dd-image logo" loading="lazy" width="100" height="43">
         </a>
       </div>
-      <div class="left_container_inner" style="background-color:rgba(204, 201, 203, 0.4); width:30%; height:fit-content; top:49; Padding:3px 3px 3px 3px;">
+      <div class="left_container_inner" style="background-color:rgba(204, 201, 203, 0.4); width:30%; height:fit-content; Padding:3px 3px 3px 3px;">
         <div id='info_northern_metropolis' style="display: none;">
+          <span id='close' style="float:right; display:inline-block; padding:2px 5px;">x</span>
           <h3>Northern Metropolis<br>北部都會區</h3>
           <p>The Northern Metropolis encompasses an area of about 30,000 hectares, panning from west to east, it comprises a number of major development clusters with transport proposals to enhance their accessibility and inter-connectivity. The metropolis commands a favourable location for the innovation and technology industry.<br><strong>key initiatives</strong></p>
           <ul>
@@ -169,6 +182,7 @@
           <p><small><b>For more please visit: </b><a href="https://www.policyaddress.gov.hk/2021/eng/pdf/publications/Northern/Northern-Metropolis-Development-Strategy-Report.pdf">Northern Metropolis Development Strategy</a></small></p>
         </div>
         <div id='info_econ_belt_east' style="display: none;">
+          <span id='close' style="float:right; display:inline-block; padding:2px 5px;">x</span>
           <h3>Eastern Knowledge and Technology Corridor<br>東部知識及科技走廊</h3>
           <p>The Northern Metropolis encompasses an area of about 30,000 hectares, panning from west to east, it comprises a number of major development clusters with transport proposals to enhance their accessibility and inter-connectivity. The metropolis commands a favourable location for the innovation and technology industry.<br><strong>key initiatives</strong></p>
           <ul>
@@ -182,6 +196,7 @@
           <p><small><b>For more please visit: </b><a href="https://www.policyaddress.gov.hk/2021/eng/pdf/publications/Northern/Northern-Metropolis-Development-Strategy-Report.pdf">Northern Metropolis Development Strategy</a></small></p>
         </div>
         <div id='info_econ_belt_west' style="display: none;">
+          <span id='close' style="float:right; display:inline-block; padding:2px 5px;">x</span>
           <h3>Western Economic Corridor<br>西部經濟走廊</h3>
           <p>The Northern Metropolis encompasses an area of about 30,000 hectares, panning from west to east, it comprises a number of major development clusters with transport proposals to enhance their accessibility and inter-connectivity. The metropolis commands a favourable location for the innovation and technology industry.<br><strong>key initiatives</strong></p>
           <ul>
@@ -195,6 +210,7 @@
           <p><small><b>For more please visit: </b><a href="https://www.policyaddress.gov.hk/2021/eng/pdf/publications/Northern/Northern-Metropolis-Development-Strategy-Report.pdf">Northern Metropolis Development Strategy</a></small></p>
         </div>
         <div id='info_harbour_metropolis' style="display: none;">
+          <span id='close' style="float:right; display:inline-block; padding:2px 5px;">x</span>
           <h3>Harbour Metropolis<br>維港都會區</h3>
           <p>The Northern Metropolis encompasses an area of about 30,000 hectares, panning from west to east, it comprises a number of major development clusters with transport proposals to enhance their accessibility and inter-connectivity. The metropolis commands a favourable location for the innovation and technology industry.<br><strong>key initiatives</strong></p>
           <ul>
