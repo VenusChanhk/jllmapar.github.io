@@ -1,0 +1,46 @@
+Export time: 2022/04/20 22:43:45 CST
+Export duration: 16.1s
+
+Export settings:
+	Export Geometry: Models
+	Output Path: C:\Users\venus\Desktop\JLL\Souvenir\Models
+	Simplify Terrain Meshes: true
+	Terrain Layers: Do not export any terrain layers
+	applicationString: CityEngine 2019.0.5403 0409R
+	author: venus
+	baseName: Development_Area_Harbour
+	encoderID: com.esri.prt.codecs.GLTFEncoder
+	encoderName: Khronos Group glTF
+	errorFallback: false
+	existingFiles: OVERWRITE
+	fileGranularity: MEMORY_BUDGET
+	globalOffset: [ -0.0, -0.0, -0.0 ]
+	includeMaterials: true
+	memoryBudget: 500
+	meshGranularity: AS_GENERATED
+	outputFormat: GLTF_GLB_WITH_SINGLE_BUFFER
+	sceneFile: /ESRI.lib/scenes/developement_area.cej
+	script: 
+	shapeNameDelimiter: _
+	writeLog: true
+
+Initial shapes:
+	0 :   OK                'Development_Area_Harbour_0.glb'             OID '1467ba78-2fa3-11b4-a4fb-0045209d902b'
+
+
+
+Files created:
+	'Development_Area_Harbour_0.glb':
+		Initial shapes:
+			0, 
+		GEOMETRY:
+			Total Meshes: 1
+			Total Polygons: 4092
+			  | Name         | Material           | Polygons 
+			==+==============+====================+==========
+			1  'from extrude' 'CityEngineMaterial'      4092 
+		MATERIAL:
+			Total Materials: 1
+			  | Name               | baseColorTexture | emissiveTexture | metallicRoughnessTexture | normalTexture | occlusionTexture 
+			==+====================+==================+=================+==========================+===============+==================
+			1  'CityEngineMaterial' ''                 ''                ''                         ''              ''                

@@ -1,0 +1,46 @@
+Export time: 2022/04/20 22:45:02 CST
+Export duration: 38.619s
+
+Export settings:
+	Export Geometry: Models
+	Output Path: C:\Users\venus\Desktop\JLL\Souvenir\Models
+	Simplify Terrain Meshes: true
+	Terrain Layers: Do not export any terrain layers
+	applicationString: CityEngine 2019.0.5403 0409R
+	author: venus
+	baseName: 2030_EconomicBelt_Western
+	encoderID: com.esri.prt.codecs.GLTFEncoder
+	encoderName: Khronos Group glTF
+	errorFallback: false
+	existingFiles: OVERWRITE
+	fileGranularity: MEMORY_BUDGET
+	globalOffset: [ -0.0, -0.0, -0.0 ]
+	includeMaterials: true
+	memoryBudget: 500
+	meshGranularity: AS_GENERATED
+	outputFormat: GLTF_GLB_WITH_SINGLE_BUFFER
+	sceneFile: /ESRI.lib/scenes/developement_area.cej
+	script: 
+	shapeNameDelimiter: _
+	writeLog: true
+
+Initial shapes:
+	0 :   OK                '2030_EconomicBelt_Western_0.glb'             OID '783acad8-2fb5-11b4-a4fb-0045209d902b'
+
+
+
+Files created:
+	'2030_EconomicBelt_Western_0.glb':
+		Initial shapes:
+			0, 
+		GEOMETRY:
+			Total Meshes: 1
+			Total Polygons: 2888
+			  | Name         | Material           | Polygons 
+			==+==============+====================+==========
+			1  'from extrude' 'CityEngineMaterial'      2888 
+		MATERIAL:
+			Total Materials: 1
+			  | Name               | baseColorTexture | emissiveTexture | metallicRoughnessTexture | normalTexture | occlusionTexture 
+			==+====================+==================+=================+==========================+===============+==================
+			1  'CityEngineMaterial' ''                 ''                ''                         ''              ''                

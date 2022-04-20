@@ -32,11 +32,15 @@
       init: function() {
         this.target = document.querySelector('#target');
         this.econ_belt_east = document.querySelector('#econ_belt_east');
+        this.econ_belt_west = document.querySelector('#econ_belt_west');
         this.dev_area_north = document.querySelector('#dev_area_north');
+        this.dev_area_harbour = document.querySelector('#dev_area_harbour');
         // 		this.marker = document.querySelector('#marker');
-        var left_inner_container = document.getElementByClass('left_container_inner');
-        var info_northern_metropolis = document.getElementById('info_northern_metropolis');
+        // var left_inner_container = document.getElementByClass('left_container_inner');
         var info_econ_belt_east = document.getElementById('info_econ_belt_east');
+        var info_econ_belt_west = document.getElementById('info_econ_belt_west');
+        var info_northern_metropolis = document.getElementById('info_northern_metropolis');
+        var info_harbour_metropolis = document.getElementById('info_harbour_metropolis');
         // 		this.marker.setAttribute('visible', 'true');
         this.prevPosition = null;
         this.prevRotation = null;
@@ -61,16 +65,33 @@
         //   this.prevRotation = null;
         // }
 
-        this.dev_area_north.addEventListener('click', function () {
-               // alert("Clicked");
-               left_inner_containerstyle.display = "none";
-               info_northern_metropolis.style.display = "block";
-            });
-
         this.econ_belt_east.addEventListener('click', function () {
                // alert("Clicked");
-               left_inner_containerstyle.display = "none";
                info_econ_belt_east.style.display = "block";
+               info_econ_belt_west.style.display = "none";
+               info_northern_metropolis.style.display = "none";
+               info_harbour_metropolis.style.display = "none";
+            });
+        this.econ_belt_west.addEventListener('click', function () {
+               // alert("Clicked");
+               info_econ_belt_east.style.display = "none";
+               info_econ_belt_west.style.display = "block";
+               info_northern_metropolis.style.display = "none";
+               info_harbour_metropolis.style.display = "none";
+            });
+        this.dev_area_north.addEventListener('click', function () {
+               // alert("Clicked");
+               info_econ_belt_east.style.display = "none";
+               info_econ_belt_west.style.display = "none";
+               info_northern_metropolis.style.display = "block";
+               info_harbour_metropolis.style.display = "none";
+            });
+        this.dev_area_harbour.addEventListener('click', function () {
+               // alert("Clicked");
+               info_econ_belt_east.style.display = "none";
+               info_econ_belt_west.style.display = "none";
+               info_northern_metropolis.style.display = "none";
+               info_harbour_metropolis.style.display = "block";
             });
 
         }
@@ -91,16 +112,32 @@
             id='econ_belt_east'
             position="6.129606 0 -3.336102"
             scale="0.021 0.05 0.021"
-            material='opacity: 0.7;'
+            material='opacity: 0.6;'
             gltf-model="https://venuschanhk.github.io/jllmapar.github.io/Models/2030_EconomicBelt_Eastern_0.glb"
+          ></a-entity>
+
+          <a-entity
+            id='econ_belt_west'
+            position="2.85321 0 -2.878155"
+            scale="0.021 0.05 0.021"
+            material='opacity: 0.6;'
+            gltf-model="https://venuschanhk.github.io/jllmapar.github.io/Models/2030_EconomicBelt_Western_0.glb"
           ></a-entity>
 
           <a-entity
             id='dev_area_north'
             position="5.32312 0.01 -4.438602"
             scale="0.021 0.07 0.021"
-            material='opacity: 0.7;'
+            material='opacity: 0.6;'
             gltf-model="https://venuschanhk.github.io/jllmapar.github.io/Models/Development_Area_Northern_0.glb"
+          ></a-entity>
+
+          <a-entity
+            id='dev_area_harbour'
+            position="5.57865 0.01 -1.82784"
+            scale="0.021 0.07 0.021"
+            material='opacity: 0.6;'
+            gltf-model="https://venuschanhk.github.io/jllmapar.github.io/Models/Development_Area_Harbour_0.glb"
           ></a-entity>
 
 
@@ -117,8 +154,8 @@
           <img src="https://www.jll.com.hk/content/dam/jll-com/images/logos/jll-logo-positive.svg" alt="JLL Hong Kong" class="cq-dd-image logo" loading="lazy" width="100" height="43">
         </a>
       </div>
-      <div class="left_container_inner" style="background-color:rgba(204, 201, 203, 0.4); width:30%; height:fit-content; display: none; top:49; Padding:3px 3px 3px 3px;">
-        <div id='info_northern_metropolis'>
+      <div class="left_container_inner" style="background-color:rgba(204, 201, 203, 0.4); width:30%; height:fit-content; top:49; Padding:3px 3px 3px 3px;">
+        <div id='info_northern_metropolis' style="display: none;">
           <h3>Northern Metropolis<br>北部都會區</h3>
           <p>The Northern Metropolis encompasses an area of about 30,000 hectares, panning from west to east, it comprises a number of major development clusters with transport proposals to enhance their accessibility and inter-connectivity. The metropolis commands a favourable location for the innovation and technology industry.<br><strong>key initiatives</strong></p>
           <ul>
@@ -131,8 +168,34 @@
           </ul>
           <p><small><b>For more please visit: </b><a href="https://www.policyaddress.gov.hk/2021/eng/pdf/publications/Northern/Northern-Metropolis-Development-Strategy-Report.pdf">Northern Metropolis Development Strategy</a></small></p>
         </div>
-        <div id='info_econ_belt_east'>
-          <h3>Easter nKnowledge and Technology orridor<br>東部知識及科技走廊</h3>
+        <div id='info_econ_belt_east' style="display: none;">
+          <h3>Eastern Knowledge and Technology Corridor<br>東部知識及科技走廊</h3>
+          <p>The Northern Metropolis encompasses an area of about 30,000 hectares, panning from west to east, it comprises a number of major development clusters with transport proposals to enhance their accessibility and inter-connectivity. The metropolis commands a favourable location for the innovation and technology industry.<br><strong>key initiatives</strong></p>
+          <ul>
+            <li>Expansion of Hung Shui Kiu/Ha Tsuen New Development Area</li>
+            <li>San Tin/Lok Ma Chau Development Node</li>
+            <li>Expansion of Kwu Tung North New Development Area</li>
+            <li>Lo Wu/Man Kam To Comprehensive Development Node</li>
+            <li>NTN New Town</li>
+            <li>Opening-up of Sha Tau Kok Town</li>
+          </ul>
+          <p><small><b>For more please visit: </b><a href="https://www.policyaddress.gov.hk/2021/eng/pdf/publications/Northern/Northern-Metropolis-Development-Strategy-Report.pdf">Northern Metropolis Development Strategy</a></small></p>
+        </div>
+        <div id='info_econ_belt_west' style="display: none;">
+          <h3>Western Economic Corridor<br>西部經濟走廊</h3>
+          <p>The Northern Metropolis encompasses an area of about 30,000 hectares, panning from west to east, it comprises a number of major development clusters with transport proposals to enhance their accessibility and inter-connectivity. The metropolis commands a favourable location for the innovation and technology industry.<br><strong>key initiatives</strong></p>
+          <ul>
+            <li>Expansion of Hung Shui Kiu/Ha Tsuen New Development Area</li>
+            <li>San Tin/Lok Ma Chau Development Node</li>
+            <li>Expansion of Kwu Tung North New Development Area</li>
+            <li>Lo Wu/Man Kam To Comprehensive Development Node</li>
+            <li>NTN New Town</li>
+            <li>Opening-up of Sha Tau Kok Town</li>
+          </ul>
+          <p><small><b>For more please visit: </b><a href="https://www.policyaddress.gov.hk/2021/eng/pdf/publications/Northern/Northern-Metropolis-Development-Strategy-Report.pdf">Northern Metropolis Development Strategy</a></small></p>
+        </div>
+        <div id='info_harbour_metropolis' style="display: none;">
+          <h3>Harbour Metropolis<br>維港都會區</h3>
           <p>The Northern Metropolis encompasses an area of about 30,000 hectares, panning from west to east, it comprises a number of major development clusters with transport proposals to enhance their accessibility and inter-connectivity. The metropolis commands a favourable location for the innovation and technology industry.<br><strong>key initiatives</strong></p>
           <ul>
             <li>Expansion of Hung Shui Kiu/Ha Tsuen New Development Area</li>
