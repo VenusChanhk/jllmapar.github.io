@@ -41,9 +41,9 @@
       tick: function() {
         if (this.el.object3D.visible) {
           this.target.setAttribute('visible', 'true')
-          if(this.prevPosition) {
-            this.target.object3D.position.lerp(this.prevPosition, 1)
-            let rot = this.target.object3D.rotation.toVector3().lerp(this.prevRotation, 1)
+          if(this.target.object3D.prevPosition) {
+            this.target.object3D.position.lerp(this.target.object3D.prevPosition, 1)
+            let rot = this.target.object3D.rotation.toVector3().lerp(this.target.object3D.prevRotation, 1)
             this.target.object3D.rotation.setFromVector3(rot)
           } else {
             this.target.setAttribute('position', this.el.getAttribute('position'))
