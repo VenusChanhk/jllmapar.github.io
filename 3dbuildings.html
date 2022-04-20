@@ -19,11 +19,11 @@
 		AFRAME.registerComponent("clicklistener", {
 			init: function(){
 				this.target = document.querySelector('#target');
-				// this.modelinfo = document.querySelector('#model_info');
+				 const modelinfo = document.getElementById('model_info');
 
 		    		this.target.addEventListener('click', e=> {
-					         alert("Clicked");
-                   // this.modelinfo.style.display = "block";
+					         // alert("Clicked");
+                   modelinfo.style.display = "block";
           			});
 			}
 		});
@@ -78,7 +78,7 @@
           scale="0.3 0.3 0.3"
           gltf-model="https://venuschanhk.github.io/jllmapar.github.io/Polygon/developement_area_2_0.glb"
         ></a-entity>
-        <a-text value="Northern Metropolis" position="3.304 2 0.0756" width="4" color="black"></a-text>
+        <a-text value="Northern Metropolis" position="3.3504 2 0.0756" width="4" color="black"></a-text>
 
         <!-- For testing
         <a-box id='target' position="3.22 1 0.22" material='opacity: 1;'></a-box> -->
