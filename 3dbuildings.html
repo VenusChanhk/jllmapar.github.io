@@ -32,14 +32,14 @@
       init: function() {
         this.target = document.querySelector('#target');
         // 		this.marker = document.querySelector('#marker');
-        var info_northern_metropolis = document.querySelector('#model_info');
+        thi.info_northern_metropolis = document.querySelector('#model_info');
         // 		this.marker.setAttribute('visible', 'true');
         this.prevPosition = null;
         this.prevRotation = null;
 
         this.target.addEventListener('click', function (evt) {
                // alert("Clicked");
-               info_northern_metropolis.style.display = "block";
+               this.info_northern_metropolis.style.display = "block";
             });
       },
       tick: function() {
