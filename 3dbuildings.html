@@ -67,32 +67,35 @@
 
     </script>
   <body>
-    <a-scene embedded arjs cursor="fuse: false; rayOrigin: mouse;">
-      <a-marker listener id='marker' emitevents="true" rayOrigin="objects: .clickable" type="pattern" preset="custom" url="https://venuschanhk.github.io/jllmapar.github.io/pattern-JLL (1).patt" size="0.042" smooth='true'>
-        <a-box material='opacity: 0;'></a-box>
+    <div id="container" style="position:absolute; top:0; left:0; height:100%; width:100%">
+      <a-scene embedded arjs cursor="fuse: false; rayOrigin: mouse;">
+        <a-marker listener id='marker' emitevents="true" rayOrigin="objects: .clickable" type="pattern" preset="custom" url="https://venuschanhk.github.io/jllmapar.github.io/pattern-JLL(1).patt" size="0.042" smooth='true'>
+          <a-box material='opacity: 0;'></a-box>
 
-        <a-entity
-          clicklistener
-          id=target
-          position="0 0 0"
-          scale="0.03 0.03 0.03"
-          gltf-model="https://venuschanhk.github.io/jllmapar.github.io/Models/2030_EconomicBelt_Eastern_0.glb"
-        ></a-entity>
-        <a-text value="Eastern Knowledge and Technology Corridor" position="3.3504 2 0.0756" width="4" color="black"></a-text>
+          <a-entity
+            clicklistener
+            id=target
+            position="3.65208 0.1 1.987681"
+            scale="0.012512 0.012512 0.012512"
+            material='opacity: 0.7;'
+            gltf-model="https://venuschanhk.github.io/jllmapar.github.io/Models/2030_EconomicBelt_Eastern_0.glb"
+          ></a-entity>
+          <a-text value="Eastern Knowledge and Technology Corridor" position="3.3504 2 0.0756" width="4" color="black"></a-text>
 
-        <!-- For testing
-        <a-box id='target' position="3.22 1 0.22" material='opacity: 1;'></a-box> -->
+          <!-- For testing
+          <a-box id='target' position="3.22 1 0.22" material='opacity: 1;'></a-box> -->
 
-      </a-marker>
-      <a-entity camera></a-entity>
-    </a-scene>
+        </a-marker>
+        <a-entity camera></a-entity>
+      </a-scene>
+    </div>
     <div class="left_container" style="position:absolute; top:0; left:0;">
       <div id="nav_bar_logo" style="Padding:3px; height:10px; width:20%">
         <a href="https://www.jll.com.hk" class="logo-link">
           <img src="https://www.jll.com.hk/content/dam/jll-com/images/logos/jll-logo-positive.svg" alt="JLL Hong Kong" class="cq-dd-image logo" loading="lazy" width="100" height="43">
         </a>
       </div>
-      <div id='info_northern_metropolis' style="background-color:rgba(204, 201, 203, 0.4); width:20%; height:fit-content; display: none; top:10; Padding:3px 3px 3px 3px;">
+      <div id='info_northern_metropolis' style="background-color:rgba(204, 201, 203, 0.4); width:30%; height:fit-content; display: none; top:49; Padding:3px 3px 3px 3px;">
         <h3>Northern Metropolis<br>北部都會區</h3>
         <p>The Northern Metropolis encompasses an area of about 30,000 hectares, panning from west to east, it comprises a number of major development clusters with transport proposals to enhance their accessibility and inter-connectivity. The metropolis commands a favourable location for the innovation and technology industry.<br><strong>key initiatives</strong></p>
         <ul>
