@@ -23,67 +23,63 @@
       const info_poi_1 = document.querySelector('#info_poi_1');
       
         econ_belt_east.addEventListener('click', function () {
-          left_container_inner.style.width = "30%";
                info_econ_belt_east.style.display = "block";
                info_econ_belt_west.style.display = "none";
                info_northern_metropolis.style.display = "none";
                info_harbour_metropolis.style.display = "none";
 		           info_poi_1.style.display = "none";
               });
-        this.econ_belt_west.addEventListener('click', function () {
-          left_container_inner.style.width = "30%";
+        econ_belt_west.addEventListener('click', function () {
                info_econ_belt_east.style.display = "none";
                info_econ_belt_west.style.display = "block";
                info_northern_metropolis.style.display = "none";
                info_harbour_metropolis.style.display = "none";
-		info_poi_1.style.display = "none";
+		           info_poi_1.style.display = "none";
             });
-        this.dev_area_north.addEventListener('click', function () {
-          left_container_inner.style.width = "30%";
+        dev_area_north.addEventListener('click', function () {
                info_econ_belt_east.style.display = "none";
                info_econ_belt_west.style.display = "none";
                info_northern_metropolis.style.display = "block";
                info_harbour_metropolis.style.display = "none";
-		info_poi_1.style.display = "none";
+		           info_poi_1.style.display = "none";
             });
-        this.dev_area_harbour.addEventListener('click', function () {
-                left_container_inner.style.width = "30%";
+        dev_area_harbour.addEventListener('click', function () {
                info_econ_belt_east.style.display = "none";
                info_econ_belt_west.style.display = "none";
                info_northern_metropolis.style.display = "none";
                info_harbour_metropolis.style.display = "block";
-		info_poi_1.style.display = "none";
+		           info_poi_1.style.display = "none";
             });
-	this.poi_1.addEventListener('click', function () {
+	poi_1.addEventListener('click', function () {
                info_econ_belt_east.style.display = "none";
                info_econ_belt_west.style.display = "none";
                info_northern_metropolis.style.display = "none";
                info_harbour_metropolis.style.display = "none";
-		info_poi_1.style.display = "block";
+		           info_poi_1.style.display = "block";
             });
 
-            document.getElementById("close-east").addEventListener('click', function () {
+            document.querySelector("#close-east").addEventListener('click', function () {
                      info_econ_belt_east.style.display = "none";
             });
-            document.getElementById("close-west").addEventListener('click', function () {
+            document.querySelector("#close-west").addEventListener('click', function () {
                      info_econ_belt_west.style.display = "none";
 
             });
-            document.getElementById("close-north").addEventListener('click', function () {
+            document.querySelector("#close-north").addEventListener('click', function () {
                      info_northern_metropolis.style.display = "none";
 
             });
-            document.getElementById("close-harbour").addEventListener('click', function () {
+            document.querySelector("#close-harbour").addEventListener('click', function () {
                      info_harbour_metropolis.style.display = "none";
             });
-	    document.getElementById("close-poi_1").addEventListener('click', function () {
+	          document.querySelector("#close-poi_1").addEventListener('click', function () {
                      info_poi_1.style.display = "none";
             });
 
 
         }
 
-      });
+      );
     
     </script>
 	
@@ -121,8 +117,8 @@
       <a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;" raycaster="far: ${customFields.libVersion}; objects: .clickable"></a-camera>
 
       <a-entity mindar-image-target="targetIndex: 0">
-        <a-gltf-model id="econ_belt_east" class="clickable" rotation="90 90 90" position="-0.134 0.131 0" scale="0.00134 0.00134 0.00134" src="#assest_econ_belt_east"></a-gltf-model>
-        <a-gltf-model rotation="90 90 90" position="-0.27659  0.06852 0" scale="0.00134 0.00134 0.00134" src="#econ_belt_west"></a-gltf-model>
+        <a-gltf-model id="econ_belt_east" class="clickable" rotation="90 90 90" position="-0.134 0.0029 0" scale="0.00134 0.00134 0.00134" src="#assest_econ_belt_east"></a-gltf-model>
+        <a-gltf-model rotation="90 90 90" position="-0.27659  0.06852 0" scale="0.0736 0.00134 0.00134" src="#econ_belt_west"></a-gltf-model>
         <a-gltf-model rotation="90 90 90" position="-0.14782 0.14423 0" scale="0.00134 0.00134 0.00134" src="#dev_area_north"></a-gltf-model>
         <a-gltf-model rotation="90 90 90" position="-0.10876 -0.0992 0" scale="0.00134 0.00134 0.00134" src="#dev_area_harbour"></a-gltf-model>
         <a-gltf-model rotation="90 90 90" position="-0.12844 0.3024 0" scale="0.00268 0.00568 0.00268" src="#poi_1"></a-gltf-model>
