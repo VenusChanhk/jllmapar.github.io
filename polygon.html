@@ -12,76 +12,165 @@
     <!-- import the webpage's javascript file -->
 
   </head>
-<!-- import aframe and then ar.js with image tracking / location based features -->
-<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
-<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+<!-- 	import aframe and ar.js with image tracking features -->
+	<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+ 	<script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+	<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+	<script>
 
-<!-- style for the loader -->
-<style>
-  .arjs-loader {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+		// AFRAME.registerComponent("clicklistener", {
+		// 	init: function(){
+		// 		this.target = document.querySelector('#target');
+		// 		 const info_northern_metropolis = document.getElementById('info_northern_metropolis');
+    //
+		//     		this.target.addEventListener('click', e=> {
+		// 			         // alert("Clicked");
+    //                info_northern_metropolis.style.display = "block";
+    //       			});
+		// 	}
+		// });
 
-  .arjs-loader div {
-    text-align: center;
-    font-size: 1.25em;
-    color: white;
-  }
-</style>
-<script>
-  
-  AFRAME.registerComponent("listener", {
+    AFRAME.registerComponent("listener", {
       init: function() {
-        this.nft = document.querySelector('#nft');
+        this.target = document.querySelector('#target');
+        this.econ_belt_east = document.querySelector('#econ_belt_east');
+        this.econ_belt_west = document.querySelector('#econ_belt_west');
+        this.dev_area_north = document.querySelector('#dev_area_north');
+        this.dev_area_harbour = document.querySelector('#dev_area_harbour');
+        // this.close = document.querySelector('#close');
+        		this.marker = document.querySelector('#marker');
+        // var left_inner_container = document.getElementByClass('left_container_inner');
+        var info_econ_belt_east = document.getElementById('info_econ_belt_east');
+        var info_econ_belt_west = document.getElementById('info_econ_belt_west');
+        var info_northern_metropolis = document.getElementById('info_northern_metropolis');
+        var info_harbour_metropolis = document.getElementById('info_harbour_metropolis');
+        var left_container_inner = document.getElementById('left_container_inner');
+        // 		this.marker.setAttribute('visible', 'true');
+        this.prevPosition = null;
+        this.prevRotation = null;
       },
-    tick: function() {
-      console.log("position");
-      console.log(this.nft.object3D.position);
-    }})
-    
-//   window.addEventListener('load', () => {
-//     const nft = document.querySelector('a-nft');
-//     console.log(nft.object3D.position)
-//   }
-</script>
 
-<body style="margin : 0px; overflow: hidden;">
-  <!-- minimal loader shown until image descriptors are loaded. Loading may take a while according to the device computational power -->
-  <div class="arjs-loader">
-    <div>Loading, please wait...</div>
-  </div>
+      tick: function() {
 
-  <!-- a-frame scene -->
-  <a-scene
-    vr-mode-ui="enabled: false;"
-    renderer="logarithmicDepthBuffer: true;"
-    embedded
-    arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
-           inspector="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js"
-  >
-    <!-- a-nft is the anchor that defines an Image Tracking entity -->
-    <!-- on 'url' use the path to the Image Descriptors created before. -->
-    <!-- the path should end with the name without the extension e.g. if file is 'pinball.fset' the path should end with 'pinball' -->
-    <a-nft
-      id="nft"
-      type="nft"
-      url="https://venuschanhk.github.io/jllmapar.github.io/image/MicrosoftTeams-image_2 - Copy"
-      smooth="true"
-      smoothCount="10"
-      smoothTolerance=".01"
-      smoothThreshold="5"   
-    >
-      <a-box material='opacity: 1;' width="4" height="1" scale="1 1 1" depth="4" position="0 0 0"></a-box>
-<a-entity
+        // if (this.el.object3D.visible) {
+        //   this.target.setAttribute('visible', 'true')
+        //   if(this.target.object3D.prevPosition) {
+        //     this.target.object3D.position.lerp(this.target.object3D.prevPosition, 1)
+        //     let rot = this.target.object3D.rotation.toVector3().lerp(this.target.object3D.prevRotation, 1)
+        //     this.target.object3D.rotation.setFromVector3(rot)
+        //   } else {
+        //     this.target.setAttribute('position', this.el.getAttribute('position'))
+        //     this.target.setAttribute('rotation', this.el.getAttribute('rotation'))
+        //   }
+        //   this.prevPosition = this.el.object3D.position
+        //   this.prevRotation = this.el.object3D.rotation
+        // } else {
+        //   this.target.setAttribute('visible', 'false')
+        //   this.prevPosition = null;
+        //   this.prevRotation = null;
+        // }
+
+        this.econ_belt_east.addEventListener('click', function () {
+          left_container_inner.style.width = "30%";
+               info_econ_belt_east.style.display = "block";
+               info_econ_belt_west.style.display = "none";
+               info_northern_metropolis.style.display = "none";
+               info_harbour_metropolis.style.display = "none";
+              });
+        this.econ_belt_west.addEventListener('click', function () {
+          left_container_inner.style.width = "30%";
+               info_econ_belt_east.style.display = "none";
+               info_econ_belt_west.style.display = "block";
+               info_northern_metropolis.style.display = "none";
+               info_harbour_metropolis.style.display = "none";
+            });
+        this.dev_area_north.addEventListener('click', function () {
+          left_container_inner.style.width = "30%";
+               info_econ_belt_east.style.display = "none";
+               info_econ_belt_west.style.display = "none";
+               info_northern_metropolis.style.display = "block";
+               info_harbour_metropolis.style.display = "none";
+            });
+        this.dev_area_harbour.addEventListener('click', function () {
+                left_container_inner.style.width = "30%";
+               info_econ_belt_east.style.display = "none";
+               info_econ_belt_west.style.display = "none";
+               info_northern_metropolis.style.display = "none";
+               info_harbour_metropolis.style.display = "block";
+            });
+
+            document.getElementById("close-east").addEventListener('click', function () {
+                     info_econ_belt_east.style.display = "none";
+            });
+            document.getElementById("close-west").addEventListener('click', function () {
+                     info_econ_belt_west.style.display = "none";
+
+            });
+            document.getElementById("close-north").addEventListener('click', function () {
+                     info_northern_metropolis.style.display = "none";
+
+            });
+            document.getElementById("close-harbour").addEventListener('click', function () {
+                     info_harbour_metropolis.style.display = "none";
+            });
+
+            document.getElementById("left_container_inner").addEventListener('click', function () {
+                     if(left_container_inner.style.width = "30%"){
+                       left_container_inner.style.width = "90%";
+                     }else{
+                       left_container_inner.style.width = "30%";
+                     }
+            });
+        }
+      // }
+      });
+       // );
+
+
+
+    </script>
+	
+	<style>
+	  .arjs-loader {
+	    height: 100%;
+	    width: 100%;
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    background-color: rgba(0, 0, 0, 0.8);
+	    z-index: 9999;
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	  }
+
+	  .arjs-loader div {
+	    text-align: center;
+	    font-size: 1.25em;
+	    color: white;
+	  }
+	</style>
+  <body style="margin : 15px; overflow: hidden; width: 90%; height: 90%;">
+  <!-- minimal loader shown until image descriptors are loaded. -->
+	  <div class="arjs-loader">
+	    <div>Loading, please wait...</div>
+	  </div>
+      <a-scene 
+	    vr-mode-ui="enabled: false;"
+	    renderer="logarithmicDepthBuffer: true;"
+	    embedded
+	    arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
+	  >
+	      
+	<a-nft
+	      type="nft"
+	      url="https://venuschanhk.github.io/jllmapar.github.io/image/MicrosoftTeams-image_2"
+	      smooth="true"
+	      smoothCount="10"
+	      smoothTolerance=".01"
+	      smoothThreshold="5"
+	    >
+          <a-entity
             id='econ_belt_east'
             position="58.3772 0 -31.7724"
             scale="0.2 0.01 0.2"
@@ -128,10 +217,73 @@
             material='opacity: 0.6;'
             gltf-model="https://venuschanhk.github.io/jllmapar.github.io/Models/SouthIslandLineWest_0.glb"
           ></a-entity>
-      
-    </a-nft>
-    <!-- static camera that moves according to the device movemenents -->
-    <a-entity camera></a-entity>
-  </a-scene>
-</body>
-    </html>
+	</a-nft>
+        <a-entity camera></a-entity>
+      </a-scene>
+
+      <div id="nav_bar_logo" style="Padding:3px; width:20%; position:absolute; top:0; left:0;">
+        <a href="https://www.jll.com.hk" class="logo-link">
+          <img src="https://www.jll.com.hk/content/dam/jll-com/images/logos/jll-logo-positive.svg" alt="JLL Hong Kong" class="cq-dd-image logo" loading="lazy" width="100" height="43">
+        </a>
+      </div>
+      <div class="left_container_inner" id='left_container_inner' style=" position:absolute; background-color:rgba(204, 201, 203, 0.4); width:30%; height:fit-content; font-size: 2vw; top:43px; left:0;">
+        <div id='info_northern_metropolis' style="display: none; Padding:3px 3px 3px 3px; ">
+          <span id="close-north" style="float:right; display:inline-block; top:-2px; padding-right:5px; cursor: pointer;">&#10005;</span>
+          <h3>Northern Metropolis<br>北部都會區</h3>
+          <p>The Northern Metropolis encompasses an area of about 30,000 hectares, panning from west to east, it comprises a number of major development clusters with transport proposals to enhance their accessibility and inter-connectivity. The metropolis commands a favourable location for the innovation and technology industry.<br><strong>key initiatives</strong></p>
+          <ul>
+            <li>Expansion of Hung Shui Kiu/Ha Tsuen New Development Area</li>
+            <li>San Tin/Lok Ma Chau Development Node</li>
+            <li>Expansion of Kwu Tung North New Development Area</li>
+            <li>Lo Wu/Man Kam To Comprehensive Development Node</li>
+            <li>NTN New Town</li>
+            <li>Opening-up of Sha Tau Kok Town</li>
+          </ul>
+          <p><small><b>For more please visit: </b><a href="https://www.policyaddress.gov.hk/2021/eng/pdf/publications/Northern/Northern-Metropolis-Development-Strategy-Report.pdf">Northern Metropolis Development Strategy</a></small></p>
+        </div>
+        <div id='info_econ_belt_east' style="display: none; Padding:3px 3px 3px 3px; ">
+          <span id="close-east" style="float:right; display:inline-block; top:-2px; padding-right:5px; cursor: pointer;">&#10005;</span>
+          <h3>Eastern Knowledge and Technology Corridor<br>東部知識及科技走廊</h3>
+          <p>The Northern Metropolis encompasses an area of about 30,000 hectares, panning from west to east, it comprises a number of major development clusters with transport proposals to enhance their accessibility and inter-connectivity. The metropolis commands a favourable location for the innovation and technology industry.<br><strong>key initiatives</strong></p>
+          <ul>
+            <li>Expansion of Hung Shui Kiu/Ha Tsuen New Development Area</li>
+            <li>San Tin/Lok Ma Chau Development Node</li>
+            <li>Expansion of Kwu Tung North New Development Area</li>
+            <li>Lo Wu/Man Kam To Comprehensive Development Node</li>
+            <li>NTN New Town</li>
+            <li>Opening-up of Sha Tau Kok Town</li>
+          </ul>
+          <p><small><b>For more please visit: </b><a href="https://www.policyaddress.gov.hk/2021/eng/pdf/publications/Northern/Northern-Metropolis-Development-Strategy-Report.pdf">Northern Metropolis Development Strategy</a></small></p>
+        </div>
+        <div id='info_econ_belt_west' style="display: none; Padding:3px 3px 3px 3px; ">
+          <span id="close-west" style="float:right; display:inline-block; top:-2px; padding-right:5px; cursor: pointer;">&#10005;</span>
+          <h3>Western Economic Corridor<br>西部經濟走廊</h3>
+          <p>The Northern Metropolis encompasses an area of about 30,000 hectares, panning from west to east, it comprises a number of major development clusters with transport proposals to enhance their accessibility and inter-connectivity. The metropolis commands a favourable location for the innovation and technology industry.<br><strong>key initiatives</strong></p>
+          <ul>
+            <li>Expansion of Hung Shui Kiu/Ha Tsuen New Development Area</li>
+            <li>San Tin/Lok Ma Chau Development Node</li>
+            <li>Expansion of Kwu Tung North New Development Area</li>
+            <li>Lo Wu/Man Kam To Comprehensive Development Node</li>
+            <li>NTN New Town</li>
+            <li>Opening-up of Sha Tau Kok Town</li>
+          </ul>
+          <p><small><b>For more please visit: </b><a href="https://www.policyaddress.gov.hk/2021/eng/pdf/publications/Northern/Northern-Metropolis-Development-Strategy-Report.pdf">Northern Metropolis Development Strategy</a></small></p>
+        </div>
+        <div id='info_harbour_metropolis' style="display: none; Padding:3px 3px 3px 3px; ">
+          <span id="close-harbour" style="float:right; display:inline-block; top:-2px; padding-right:5px; cursor: pointer;">&#10005;</span>
+          <h3>Harbour Metropolis<br>維港都會區</h3>
+          <p>The Northern Metropolis encompasses an area of about 30,000 hectares, panning from west to east, it comprises a number of major development clusters with transport proposals to enhance their accessibility and inter-connectivity. The metropolis commands a favourable location for the innovation and technology industry.<br><strong>key initiatives</strong></p>
+          <ul>
+            <li>Expansion of Hung Shui Kiu/Ha Tsuen New Development Area</li>
+            <li>San Tin/Lok Ma Chau Development Node</li>
+            <li>Expansion of Kwu Tung North New Development Area</li>
+            <li>Lo Wu/Man Kam To Comprehensive Development Node</li>
+            <li>NTN New Town</li>
+            <li>Opening-up of Sha Tau Kok Town</li>
+          </ul>
+          <p><small><b>For more please visit: </b><a href="https://www.policyaddress.gov.hk/2021/eng/pdf/publications/Northern/Northern-Metropolis-Development-Strategy-Report.pdf">Northern Metropolis Development Strategy</a></small></p>
+        </div>
+      </div>
+    <!-- </div> -->
+  </body>
+</html>
