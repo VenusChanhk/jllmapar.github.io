@@ -15,12 +15,13 @@
       const dev_area_north = document.querySelector('#dev_area_north');
       const dev_area_harbour = document.querySelector('#dev_area_harbour');
       const poi_1 = document.querySelector('#poi_1');
+      const poi_2 = document.querySelector('#poi_2');
       
       const info_econ_belt_east = document.querySelector('#info_econ_belt_east');
       const info_econ_belt_west = document.querySelector('#info_econ_belt_west');
       const info_dev_area_north = document.querySelector('#info_dev_area_north');
       const info_dev_area_harbour = document.querySelector('#info_dev_area_harbour');
-      const info_poi_1 = document.querySelector('#info_poi_1');
+      const info_poi_2 = document.querySelector('#info_poi_2');
       
         econ_belt_east.addEventListener('click', function () {
                info_econ_belt_east.style.display = "block";
@@ -28,6 +29,7 @@
                info_dev_area_north.style.display = "none";
                info_dev_area_harbour.style.display = "none";
 		           info_poi_1.style.display = "none";
+          info_poi_2.style.display = "none";
               });
         econ_belt_west.addEventListener('click', function () {
                info_econ_belt_east.style.display = "none";
@@ -35,6 +37,7 @@
                info_dev_area_north.style.display = "none";
                info_dev_area_harbour.style.display = "none";
 		           info_poi_1.style.display = "none";
+          info_poi_2.style.display = "none";
             });
         dev_area_north.addEventListener('click', function () {
                info_econ_belt_east.style.display = "none";
@@ -42,6 +45,7 @@
                info_dev_area_north.style.display = "block";
                info_dev_area_harbour.style.display = "none";
 		           info_poi_1.style.display = "none";
+          info_poi_2.style.display = "none";
             });
         dev_area_harbour.addEventListener('click', function () {
                info_econ_belt_east.style.display = "none";
@@ -49,6 +53,7 @@
                info_dev_area_north.style.display = "none";
                info_dev_area_harbour.style.display = "block";
 		           info_poi_1.style.display = "none";
+          info_poi_2.style.display = "none";
             });
       	poi_1.addEventListener('click', function () {
                info_econ_belt_east.style.display = "none";
@@ -56,6 +61,15 @@
                info_dev_area_north.style.display = "none";
                info_dev_area_harbour.style.display = "none";
 		           info_poi_1.style.display = "block";
+              info_poi_2.style.display = "none";
+            });
+            	poi_2.addEventListener('click', function () {
+               info_econ_belt_east.style.display = "none";
+               info_econ_belt_west.style.display = "none";
+               info_dev_area_north.style.display = "none";
+               info_dev_area_harbour.style.display = "none";
+		           info_poi_1.style.display = "none";
+               info_poi_2.style.display = "block";
             });
 
             document.querySelector("#close-east").addEventListener('click', function () {
@@ -75,7 +89,9 @@
 	          document.querySelector("#close-poi_1").addEventListener('click', function () {
                      info_poi_1.style.display = "none";
             });
-
+	          document.querySelector("#close-poi_2").addEventListener('click', function () {
+                     info_poi_2.style.display = "none";
+            });
 
         }
 
@@ -122,6 +138,7 @@
         <a-gltf-model id="dev_area_north" class="clickable" rotation="90 90 90" position="-0.14782 0.0674 0" scale="0.00134 0.00134 0.00134" src="#assest_dev_area_north"></a-gltf-model>
         <a-gltf-model id="dev_area_harbour" class="clickable" rotation="90 90 90" position="-0.10876 -0.0992 0" scale="0.00134 0.00134 0.00134" src="#assest_dev_area_harbour"></a-gltf-model>
         <a-gltf-model id="poi_1" class="clickable" rotation="90 0 0" position="-0.11844 0.20577 -0.1" scale="0.01 0.02 0.01" src="#assest_poi_1"></a-gltf-model>
+                <a-gltf-model id="poi_2" class="clickable" rotation="90 0 0" position="-0.42844 0.20577 -0.1" scale="0.01 0.02 0.01" src="#assest_poi_1"></a-gltf-model>
       </a-entity>
     </a-scene>
 
@@ -197,6 +214,11 @@
           <span id="close-poi_1" style="float:right; display:inline-block; top:-2px; padding-right:5px; cursor: pointer;">&#10005;</span>
           <h3>Apollo Future Industry City<br>阿波羅未來產業城</h3>
           <p><small><b>For more please visit: </b><a href="https://www.policyaddress.gov.hk/2021/eng/pdf/publications/Northern/Northern-Metropolis-Development-Strategy-Report.pdf">Apollo Future Industry City</a></small></p>
+        </div>
+        	<div id='info_poi_2' style="display: none; Padding:3px 3px 3px 3px; ">
+          <span id="close-poi_2" style="float:right; display:inline-block; top:-2px; padding-right:5px; cursor: pointer;">&#10005;</span>
+          <h3>Qianhai Cooperation Zone</h3>
+          <p><small><b>For more please visit: </b><a href="https://www.policyaddress.gov.hk/2021/eng/pdf/publications/Northern/Northern-Metropolis-Development-Strategy-Report.pdf">Qianhai Cooperation Zone</a></small></p>
         </div>
       </div>
     <!-- </div> -->
