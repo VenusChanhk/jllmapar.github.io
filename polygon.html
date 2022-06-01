@@ -51,25 +51,6 @@
       },
 
       tick: function() {
-
-        // if (this.el.object3D.visible) {
-        //   this.target.setAttribute('visible', 'true')
-        //   if(this.target.object3D.prevPosition) {
-        //     this.target.object3D.position.lerp(this.target.object3D.prevPosition, 1)
-        //     let rot = this.target.object3D.rotation.toVector3().lerp(this.target.object3D.prevRotation, 1)
-        //     this.target.object3D.rotation.setFromVector3(rot)
-        //   } else {
-        //     this.target.setAttribute('position', this.el.getAttribute('position'))
-        //     this.target.setAttribute('rotation', this.el.getAttribute('rotation'))
-        //   }
-        //   this.prevPosition = this.el.object3D.position
-        //   this.prevRotation = this.el.object3D.rotation
-        // } else {
-        //   this.target.setAttribute('visible', 'false')
-        //   this.prevPosition = null;
-        //   this.prevRotation = null;
-        // }
-
         this.econ_belt_east.addEventListener('click', function () {
           left_container_inner.style.width = "30%";
                info_econ_belt_east.style.display = "block";
@@ -160,6 +141,7 @@
 	    renderer="logarithmicDepthBuffer: true;"
 	    embedded
 	    arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
+	       listener
 	  >
 	      
 	<a-nft
@@ -170,11 +152,13 @@
 	      smoothCount="10"
 	      smoothTolerance=".01"
 	      smoothThreshold="5"
-<!-- 	      listener  -->
+		raycaster="objects: .clickable"
+		emitevents="true"
+		cursor="fuse: false; rayOrigin: mouse;"
 	    >
           <a-entity
             id='econ_belt_east'
-            position="62.3772 0 -35.7724"
+            position="68.3772 0 -41.7724"
             scale="0.2 0.01 0.2"
             material='opacity: 0.6;'
             gltf-model="https://venuschanhk.github.io/jllmapar.github.io/Models/2030_EconomicBelt_Eastern_0.glb"
@@ -190,7 +174,7 @@
 
           <a-entity
             id='dev_area_north'
-            position="50.6964 0.01 -42.272"
+            position="60.6964 0.01 -52.272"
             scale="0.2 0.01 0.2"
             material='opacity: 0.6;'
             gltf-model="https://venuschanhk.github.io/jllmapar.github.io/Models/Development_Area_Northern_0.glb"
