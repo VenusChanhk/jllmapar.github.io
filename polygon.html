@@ -58,6 +58,7 @@
                info_econ_belt_west.style.display = "none";
                info_northern_metropolis.style.display = "none";
                info_harbour_metropolis.style.display = "none";
+		info_poi_1.style.display = "none";
               });
         this.econ_belt_west.addEventListener('click', function () {
           left_container_inner.style.width = "30%";
@@ -65,6 +66,7 @@
                info_econ_belt_west.style.display = "block";
                info_northern_metropolis.style.display = "none";
                info_harbour_metropolis.style.display = "none";
+		info_poi_1.style.display = "none";
             });
         this.dev_area_north.addEventListener('click', function () {
           left_container_inner.style.width = "30%";
@@ -72,6 +74,7 @@
                info_econ_belt_west.style.display = "none";
                info_northern_metropolis.style.display = "block";
                info_harbour_metropolis.style.display = "none";
+		info_poi_1.style.display = "none";
             });
         this.dev_area_harbour.addEventListener('click', function () {
                 left_container_inner.style.width = "30%";
@@ -79,13 +82,14 @@
                info_econ_belt_west.style.display = "none";
                info_northern_metropolis.style.display = "none";
                info_harbour_metropolis.style.display = "block";
+		info_poi_1.style.display = "none";
             });
 	this.poi_1.addEventListener('click', function () {
-                left_container_inner.style.width = "30%";
                info_econ_belt_east.style.display = "none";
                info_econ_belt_west.style.display = "none";
                info_northern_metropolis.style.display = "none";
-               info_harbour_metropolis.style.display = "block";
+               info_harbour_metropolis.style.display = "none";
+		info_poi_1.style.display = "block";
             });
 
             document.getElementById("close-east").addEventListener('click', function () {
@@ -106,13 +110,7 @@
                      info_poi_1.style.display = "none";
             });
 
-            document.getElementById("left_container_inner").addEventListener('click', function () {
-                     if(left_container_inner.style.width = "30%"){
-                       left_container_inner.style.width = "90%";
-                     }else{
-                       left_container_inner.style.width = "30%";
-                     }
-            });
+
         }
       // }
       });
@@ -209,12 +207,16 @@
         <a-entity camera></a-entity>
       </a-scene>
 
-      <div id="nav_bar_logo" style="Padding:3px; width:20%; position:absolute; top:0; left:0; writing-mode: vertical-rl; text-orientation: mixed;">
+      <div id="nav_bar_logo" style="Padding:10px; width:20%; position:absolute; top:0; right:0;">
         <a href="https://www.jll.com.hk" class="logo-link">
-          <img src="https://www.jll.com.hk/content/dam/jll-com/images/logos/jll-logo-positive.svg" alt="JLL Hong Kong" class="cq-dd-image logo" loading="lazy" width="100" height="43">
+          <img src="https://www.jll.com.hk/content/dam/jll-com/images/logos/jll-logo-positive.svg" alt="JLL Hong Kong" class="cq-dd-image logo" loading="lazy" width="100" height="43" style="    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90bdeg);">
         </a>
       </div>
-      <div class="left_container_inner" id='left_container_inner' style=" writing-mode: vertical-rl; text-orientation: mixed; position:absolute; background-color:rgba(204, 201, 203, 0.4); width:30%; height:fit-content; font-size: 2vw; top:43px; left:0;">
+      <div class="left_container_inner" id='left_container_inner' style=" writing-mode: vertical-rl; text-orientation: mixed; position:absolute; background-color:rgba(204, 201, 203, 0.7); width:fit-content; height:50%; font-size: 2vw; top:0px; right:40;">
         <div id='info_northern_metropolis' style="display: none; Padding:3px 3px 3px 3px; ">
           <span id="close-north" style="float:right; display:inline-block; top:-2px; padding-right:5px; cursor: pointer;">&#10005;</span>
           <h3>Northern Metropolis<br>北部都會區</h3>
@@ -229,7 +231,7 @@
           </ul>
           <p><small><b>For more please visit: </b><a href="https://www.policyaddress.gov.hk/2021/eng/pdf/publications/Northern/Northern-Metropolis-Development-Strategy-Report.pdf">Northern Metropolis Development Strategy</a></small></p>
         </div>
-        <div id='info_econ_belt_east' style="display: none; Padding:3px 3px 3px 3px; ">
+        <div id='info_econ_belt_east' style="display: block; Padding:3px 3px 3px 3px; ">
           <span id="close-east" style="float:right; display:inline-block; top:-2px; padding-right:5px; cursor: pointer;">&#10005;</span>
           <h3>Eastern Knowledge and Technology Corridor<br>東部知識及科技走廊</h3>
           <p>The Northern Metropolis encompasses an area of about 30,000 hectares, panning from west to east, it comprises a number of major development clusters with transport proposals to enhance their accessibility and inter-connectivity. The metropolis commands a favourable location for the innovation and technology industry.<br><strong>key initiatives</strong></p>
