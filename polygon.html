@@ -25,36 +25,36 @@
         econ_belt_east.addEventListener('click', function () {
                info_econ_belt_east.style.display = "block";
                info_econ_belt_west.style.display = "none";
-               info_northern_metropolis.style.display = "none";
-               info_harbour_metropolis.style.display = "none";
+               dev_area_north.style.display = "none";
+               dev_area_harbour.style.display = "none";
 		           info_poi_1.style.display = "none";
               });
         econ_belt_west.addEventListener('click', function () {
                info_econ_belt_east.style.display = "none";
                info_econ_belt_west.style.display = "block";
-               info_northern_metropolis.style.display = "none";
-               info_harbour_metropolis.style.display = "none";
+               dev_area_north.style.display = "none";
+               dev_area_harbour.style.display = "none";
 		           info_poi_1.style.display = "none";
             });
         dev_area_north.addEventListener('click', function () {
                info_econ_belt_east.style.display = "none";
                info_econ_belt_west.style.display = "none";
-               info_northern_metropolis.style.display = "block";
-               info_harbour_metropolis.style.display = "none";
+               dev_area_north.style.display = "block";
+               dev_area_harbour.style.display = "none";
 		           info_poi_1.style.display = "none";
             });
         dev_area_harbour.addEventListener('click', function () {
                info_econ_belt_east.style.display = "none";
                info_econ_belt_west.style.display = "none";
-               info_northern_metropolis.style.display = "none";
-               info_harbour_metropolis.style.display = "block";
+               dev_area_north.style.display = "none";
+               dev_area_harbour.style.display = "block";
 		           info_poi_1.style.display = "none";
             });
       	poi_1.addEventListener('click', function () {
                info_econ_belt_east.style.display = "none";
                info_econ_belt_west.style.display = "none";
-               info_northern_metropolis.style.display = "none";
-               info_harbour_metropolis.style.display = "none";
+               dev_area_north.style.display = "none";
+               dev_area_harbour.style.display = "none";
 		           info_poi_1.style.display = "block";
             });
 
@@ -66,11 +66,11 @@
 
             });
             document.querySelector("#close-north").addEventListener('click', function () {
-                     info_northern_metropolis.style.display = "none";
+                     dev_area_north.style.display = "none";
 
             });
             document.querySelector("#close-harbour").addEventListener('click', function () {
-                     info_harbour_metropolis.style.display = "none";
+                     dev_area_harbour.style.display = "none";
             });
 	          document.querySelector("#close-poi_1").addEventListener('click', function () {
                      info_poi_1.style.display = "none";
