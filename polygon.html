@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <title>ARnft example with an animated gltf model</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=1" />
-
+        <link rel="stylesheet" href="https://raw.githack.com/webarkit/ARnft/master/examples/css/nft-style.css" />
     </head>
 
     <body>
@@ -17,7 +17,7 @@
         <script>
             let width = 640;
             let height = 480;
-            ARnft.ARnft.init(width, height, [["https://venuschanhk.github.io/jllmapar.github.io/image"]], [["MicrosoftTeams-image_2 - Copy"]], true)
+            ARnft.ARnft.init(width, height, [["https://venuschanhk.github.io/jllmapar.github.io/image"]], [["MicrosoftTeams-image_2 - Copy"]], "https://raw.githack.com/webarkit/ARnft/master/examples/config.json", true)
                 .then((nft) => {
                     document.addEventListener("containerEvent", function (ev) {
                         let canvas = document.getElementById("canvas");
