@@ -1,91 +1,137 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <title>ARnft example with an animated gltf model</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=1" />
-        <link rel="stylesheet" href="https://raw.githack.com/webarkit/ARnft/master/examples/css/nft-style.css" />
-    </head>
+<html lang="en">
+  <head>
+    <title>Development Area</title>
+    <!-- <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
-    <body>
+    <!-- AR.js by @jerome_etienne - github: https://github.com/jeromeetienne/ar.js - info: https://medium.com/arjs/augmented-reality-in-10-lines-of-html-4e193ea9fdbf -->
+<!--     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script> -->
+    <!-- import the webpage's javascript file -->
 
+  </head>
+<!-- import aframe and then ar.js with image tracking / location based features -->
+<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
 
-        <script src="https://raw.githack.com/webarkit/ARnft/master/examples/js/third_party/three.js/three.min.js"></script>
-        <script src="https://raw.githack.com/webarkit/ARnft/master/examples/js/ARnftThreejs.js"></script>
-        <script src="https://raw.githack.com/webarkit/ARnft/master/dist/ARnft.js"></script>
+<!-- style for the loader -->
+<style>
+  .arjs-loader {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-        <script>
-            let width = 640;
-            let height = 480;
-            ARnft.ARnft.init(width, height, [["https://venuschanhk.github.io/jllmapar.github.io/image"]], [["MicrosoftTeams-image_2 - Copy"]], "https://raw.githack.com/webarkit/ARnft/master/examples/config.json", true)
-                .then((nft) => {
-                    document.addEventListener("containerEvent", function (ev) {
-                        let canvas = document.getElementById("canvas");
-                        let fov = (0.8 * 180) / Math.PI;
-                        let ratio = width / height;
-                        let config = {
-                            renderer: {
-                                alpha: true,
-                                antialias: true,
-                                context: null,
-                                precision: "mediump",
-                                premultipliedAlpha: true,
-                                stencil: true,
-                                depth: true,
-                                logarithmicDepthBuffer: true,
-                            },
-                            camera: {
-                                fov: fov,
-                                ratio: ratio,
-                                near: 0.01,
-                                far: 1000,
-                            },
-                        };
+  .arjs-loader div {
+    text-align: center;
+    font-size: 1.25em;
+    color: white;
+  }
+</style>
+<script>
+  
+  AFRAME.registerComponent("listener", {
+      init: function() {
+        this.nft = document.querySelector('#nft');
+      },
+    tick: function() {
+      console.log("position");
+      console.log(this.nft.object3D.position);
+    }})
+    
+//   window.addEventListener('load', () => {
+//     const nft = document.querySelector('a-nft');
+//     console.log(nft.object3D.position)
+//   }
+</script>
 
-                        let sceneThreejs = new ARnftThreejs.SceneRendererTJS(config, canvas, nft.uuid, true);
-                        sceneThreejs.initRenderer();
+<body style="margin : 0px; overflow: hidden;">
+  <!-- minimal loader shown until image descriptors are loaded. Loading may take a while according to the device computational power -->
+  <div class="arjs-loader">
+    <div>Loading, please wait...</div>
+  </div>
 
-                        const renderer = sceneThreejs.getRenderer();
-                        const scene = sceneThreejs.getScene();
-                        renderer.outputEncoding = THREE.sRGBEncoding;
-                        renderer.physicallyCorrectLights = true;
-                        let directionalLight = new THREE.DirectionalLight("#fff", 0.4);
-                        directionalLight.position.set(0.5, 0, 0.866);
-                        scene.add(directionalLight);
+  <!-- a-frame scene -->
+  <a-scene
+    vr-mode-ui="enabled: false;"
+    renderer="logarithmicDepthBuffer: true;"
+    embedded
+    arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
+           inspector="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js"
+  >
+    <!-- a-nft is the anchor that defines an Image Tracking entity -->
+    <!-- on 'url' use the path to the Image Descriptors created before. -->
+    <!-- the path should end with the name without the extension e.g. if file is 'pinball.fset' the path should end with 'pinball' -->
+    <a-nft
+      id="nft"
+      type="nft"
+      url="https://venuschanhk.github.io/jllmapar.github.io/image/MicrosoftTeams-image_2 - Copy"
+      smooth="true"
+      smoothCount="10"
+      smoothTolerance=".01"
+      smoothThreshold="5"   
+    >
+      <a-box material='opacity: 1;' width="4" height="1" scale="1 1 1" depth="4" position="0 0 0"></a-box>
+<a-entity
+            id='econ_belt_east'
+            position="58.3772 0 -31.7724"
+            scale="0.2 0.01 0.2"
+            material='opacity: 0.6;'
+            gltf-model="https://venuschanhk.github.io/jllmapar.github.io/Models/2030_EconomicBelt_Eastern_0.glb"
+          ></a-entity>
 
-                        let nftAddTJS = new ARnftThreejs.NFTaddTJS(nft.uuid);
-                        nftAddTJS.oef = true;
-                        let mixers = [];
-                        let clock = new THREE.Clock();
-                        function modelAnimation(gltf) {
-                            var model = gltf.scene.children[0];
-                            model.rotation.x = Math.PI / 2;
-                            var animation = gltf.animations[0];
-                            var mixer = new THREE.AnimationMixer(model);
-                            mixers.push(mixer);
-                            var action = mixer.clipAction(animation);
-                            action.play();
-                        }
-                        function updateAnimations() {
-                            if (mixers.length > 0) {
-                                for (var i = 0; i < mixers.length; i++) {
-                                    mixers[i].update(clock.getDelta());
-                                }
-                            }
-                        }
-                        nftAddTJS.addModelWithCallback("https://venuschanhk.github.io/jllmapar.github.io/Models/2030_EconomicBelt_Eastern_0.glb", "MicrosoftTeams-image_2 - Copy", modelAnimation, false);
+          <a-entity
+            id='econ_belt_west'
+            position="27.1734 0 -27.411"
+            scale="0.2 0.01 0.2"
+            material='opacity: 0.6;'
+            gltf-model="https://venuschanhk.github.io/jllmapar.github.io/Models/2030_EconomicBelt_Western_0.glb"
+          ></a-entity>
 
-                        const tick = () => {
-                            sceneThreejs.draw();
-                            window.requestAnimationFrame(tick);
-                            updateAnimations();
-                        };
-                        tick();
-                    });
-                })
-                .catch((error) => {
-                    console.log(error);
-                });
-        </script>
-    </body>
-</html>
+          <a-entity
+            id='dev_area_north'
+            position="50.6964 0.01 -42.272"
+            scale="0.2 0.01 0.2"
+            material='opacity: 0.6;'
+            gltf-model="https://venuschanhk.github.io/jllmapar.github.io/Models/Development_Area_Northern_0.glb"
+          ></a-entity>
+
+          <a-entity
+            id='dev_area_harbour'
+            position="0 0.01 0"
+            scale="0.2 0.01 0.2"
+            material='opacity: 0.6;'
+            gltf-model="https://venuschanhk.github.io/jllmapar.github.io/Models/Development_Area_Harbour_0.glb"
+          ></a-entity>
+      
+          <a-entity
+            id='reclamation_area_LungKwuTan'
+            position="21.7186 0.01 -29.8306"
+            scale="0.2 0.01 0.2"
+            material='opacity: 0.6;'
+            gltf-model="https://venuschanhk.github.io/jllmapar.github.io/Models/LungKwuTan_0.glb"
+          ></a-entity>
+      
+          <a-entity
+            id='Future_MTR_SouthIslandLineWest'
+            position="52.1572 0.01 -12.4988"
+            scale="0.2 0.01 0.2"
+            material='opacity: 0.6;'
+            gltf-model="https://venuschanhk.github.io/jllmapar.github.io/Models/SouthIslandLineWest_0.glb"
+          ></a-entity>
+      
+    </a-nft>
+    <!-- static camera that moves according to the device movemenents -->
+    <a-entity camera></a-entity>
+  </a-scene>
+</body>
+    </html>
