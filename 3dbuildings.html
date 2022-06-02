@@ -118,20 +118,11 @@
 	    font-size: 1.25em;
 	    color: white;
 	  }
-		    @media screen and (orientation: landscape) {
-      html {
-        /* Rotate the content container */
-        transform: rotate(-90deg);
-        transform-origin: left top;
-        /* Set content width to viewport height */
-        width: 100vh;
-        /* Set content height to viewport width */
-        height: 100vw;
-        overflow-x: hidden;
-        position: absolute;
-        top: 100%;
-        left: 0;
-      }
+		    @media screen and (orientation:portrait) {
+  body {
+    height: 100vw;
+    transform: rotate(90deg);
+  }
     }
 	</style>
   <body style="margin : 15px; overflow: hidden; width: 90%; height: 90%;">
