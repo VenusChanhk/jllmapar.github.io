@@ -96,26 +96,7 @@
         }
 
       );
-		var elem = document.documentElement;
-function openFullscreen() {
-  if (elem.requestFullscreen) {
-    elem.requestFullscreen();
-  } else if (elem.webkitRequestFullscreen) { /* Safari */
-    elem.webkitRequestFullscreen();
-  } else if (elem.msRequestFullscreen) { /* IE11 */
-    elem.msRequestFullscreen();
-  }
-};
 
-function closeFullscreen() {
-  if (document.exitFullscreen) {
-    document.exitFullscreen();
-  } else if (document.webkitExitFullscreen) { /* Safari */
-    document.webkitExitFullscreen();
-  } else if (document.msExitFullscreen) { /* IE11 */
-    document.msExitFullscreen();
-  }
-};
     
     </script>
 	
@@ -172,10 +153,8 @@ function closeFullscreen() {
     -ms-transform: rotate(90deg);
     transform: rotate(90bdeg);">
         </a>
-	<button onclick="openFullscreen();">Open Fullscreen</button>
-	<button onclick="closeFullscreen();">Close Fullscreen</button>
       </div>
-      <div class="left_container_inner" id='left_container_inner' style=" writing-mode: vertical-rl; text-orientation: sideways; position:absolute; background-color:rgba(204, 201, 203, 0.7); width:fit-content; height:50%; font-size: 2vw; top:0px; right:15%;">
+      <div class="left_container_inner" id='left_container_inner' style=" writing-mode: vertical-rl; text-orientation: sideways; position:absolute; background-color:rgba(0,0,0); width:fit-content; height:100%; font-size: 2vw; width:100%">
         <div id='info_dev_area_north' style="display: none; Padding:3px 3px 3px 3px; ">
           <span id="close-north" style="float:right; display:inline-block; top:-2px; padding-right:5px; cursor: pointer;">&#10005;</span>
           <h3>Northern Metropolis<br>北部都會區</h3>
