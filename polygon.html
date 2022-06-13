@@ -96,6 +96,26 @@
         }
 
       );
+		var elem = document.documentElement;
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  }
+};
+
+function closeFullscreen() {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.webkitExitFullscreen) { /* Safari */
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) { /* IE11 */
+    document.msExitFullscreen();
+  }
+};
     
     </script>
 	
@@ -152,6 +172,8 @@
     -ms-transform: rotate(90deg);
     transform: rotate(90bdeg);">
         </a>
+	<button onclick="openFullscreen();">Open Fullscreen</button>
+	<button onclick="closeFullscreen();">Close Fullscreen</button>
       </div>
       <div class="left_container_inner" id='left_container_inner' style=" writing-mode: vertical-rl; text-orientation: sideways; position:absolute; background-color:rgba(204, 201, 203, 0.7); width:fit-content; height:50%; font-size: 2vw; top:0px; right:15%;">
         <div id='info_dev_area_north' style="display: none; Padding:3px 3px 3px 3px; ">
