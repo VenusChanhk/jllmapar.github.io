@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const poi_apollo = document.querySelector('#poi_apollo');
     const poi_qianhai = document.querySelector('#poi_qianhai');
     
+    const info_poi_apollo = document.querySelector('#info_poi_apollo');
     const info_poi_qianhai = document.querySelector('#info_poi_qianhai');
 
     poi_apollo.addEventListener('click', function () {
