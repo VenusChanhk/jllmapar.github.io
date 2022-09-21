@@ -41,12 +41,14 @@
 }
 
 .popup_container{
+  writing-mode: vertical-rl; 
+  text-orientation: sideways; 
   position: absolute;
   width: 772px;
   height: 592px;
-  left: 20px;
-  top: 20px;
-  display: block;
+  left: 5px;
+  top: 5px;
+  display: none;
   background: #F1F2F2;
   border-radius: 5px;
 }
