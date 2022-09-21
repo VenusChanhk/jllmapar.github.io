@@ -151,3 +151,8 @@
 
     color: #000000;
   }
+
+
+  #info_poi_apollo {
+    display: none;
+  }
