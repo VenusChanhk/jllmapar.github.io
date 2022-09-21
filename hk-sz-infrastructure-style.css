@@ -51,6 +51,14 @@
   border-radius: 5px;
 }
 
+#info_poi_apollo{
+  display: none;
+}
+
+#info_poi_qianhai{
+  display: none;
+}
+
 .popup_title{
   position: absolute;
   width: 573px;
