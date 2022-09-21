@@ -80,6 +80,8 @@
   position: absolute;
   width: 702px;
   height: 233px;    
+  top:0px;
+  left:0px;
   border-radius: 5px 5px 0px 0px;
   padding:0px;
 }
