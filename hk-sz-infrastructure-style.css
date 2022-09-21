@@ -29,6 +29,7 @@
   font-size: 2vw; 
   display: none;
   Padding:3px 3px 3px 3px;
+    overflow: scroll;
 }
 
 .close-cross{
@@ -40,7 +41,7 @@
 
 .popup_container{
   position: absolute;
-  width: 90%;
+  width: 772px;
   height: 592px;
   margin: auto;
   background: #F1F2F2;
@@ -50,7 +51,7 @@
   -o-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
-  overflow: scroll;
+
 }
 
 #info_poi_apollo{
