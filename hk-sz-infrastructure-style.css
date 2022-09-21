@@ -38,13 +38,14 @@
   font-size: 25px;
 }
 
-
-#info_poi_apollo{
-  display: none;
-    position: absolute;
-  width: 792px;
+.popup_container{
+  position: absolute;
+  width: 772px;
   height: 592px;
-  margin: 0px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin: 5px;
   background: #F1F2F2;
   border-radius: 5px;
   -webkit-transform: rotate(90deg);
@@ -55,20 +56,12 @@
   overflow: scroll;
 }
 
+#info_poi_apollo{
+  display: none;
+}
+
 #info_poi_qianhai{
   display: none;
-    position: absolute;
-  width: 792px;
-  height: 592px;
-  margin: 0px;
-  background: #F1F2F2;
-  border-radius: 5px;
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
-  overflow: scroll;
 }
 
 .popup_title{
