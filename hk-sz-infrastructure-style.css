@@ -40,12 +40,9 @@
 
 .popup_container{
   position: absolute;
-  width: 772px;
+  width: 90%;
   height: 592px;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  margin: 5px;
+  margin: auto;
   background: #F1F2F2;
   border-radius: 5px;
   -webkit-transform: rotate(90deg);
