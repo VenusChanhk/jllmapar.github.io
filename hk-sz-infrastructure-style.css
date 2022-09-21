@@ -84,6 +84,7 @@
   left:0px;
   border-radius: 5px 5px 0px 0px;
   padding:0px;
+  overflow: hidden;
 }
 
 .popup_box_1{
