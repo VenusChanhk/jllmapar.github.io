@@ -50,7 +50,7 @@
     height: 592px;
     left: 20px;
     top: 20px;
-    
+    display: none;
     background: #F1F2F2;
     border-radius: 5px;
   }
