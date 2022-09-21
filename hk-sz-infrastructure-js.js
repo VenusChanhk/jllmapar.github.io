@@ -21,7 +21,10 @@ document.addEventListener("DOMContentLoaded", function() {
               info_poi_qianhai.style.display = "none";
     });
 
-
+    poi_apollo.addEventListener("click", event => {
+      info_poi_apollo.style.display = "block";
+      info_poi_qianhai.style.display = "none";
+    });
     
   }
 
