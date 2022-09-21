@@ -23,12 +23,10 @@
   position:absolute; 
   top: 0px;
   right: 0px;
-  background-color:rgba(0, 0, 0, 1); 
   width:fit-content; 
   height:100%;
   width: 100%;
   font-size: 2vw; 
-  color: white;
   display: none;
   Padding:3px 3px 3px 3px;
 }
