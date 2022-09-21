@@ -17,9 +17,7 @@
   color: white;
 }
 
-#left_container{
-  writing-mode: vertical-rl; 
-  text-orientation: sideways; 
+#left_container{ 
   position:absolute; 
   top: 0px;
   right: 0px;
@@ -40,11 +38,8 @@
 
 .popup_container{
   position: absolute;
-  width: 772px;
-  height: 592px;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+/*   width: 772px;
+  height: 592px; */
   margin: 5px;
   background: #F1F2F2;
   border-radius: 5px;
