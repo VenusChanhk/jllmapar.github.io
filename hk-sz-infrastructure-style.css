@@ -43,7 +43,7 @@
 /*   height: 592px; */
 /*   width: 90%; */
   height:80%;
-  margin: auto;
+  margin-bottom: 10px;
   background: #F1F2F2;
   border-radius: 5px;
   -webkit-transform: rotate(90deg);
