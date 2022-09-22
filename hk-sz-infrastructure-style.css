@@ -40,9 +40,9 @@
 .popup_container{
   position: relative;
 /*   width: 702px; */
-/*   height: 592px; */
-  width: 80%;
-  height:80%;
+  height: 592px;
+  width: 90%;
+/*   height:80%; */
   margin: auto;
   background: #F1F2F2;
   border-radius: 5px;
